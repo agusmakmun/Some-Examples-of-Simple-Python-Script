@@ -1,5 +1,5 @@
 """
-Name             : Alarm with Timer
+Name             : Ip Checker
 Created By       : Agus Makmun (Summon Agus)
 Blog             : bloggersmart.net - python.web.id
 License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
