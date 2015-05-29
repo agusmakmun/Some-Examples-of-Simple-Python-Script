@@ -4,7 +4,11 @@ Created By       : Agus Makmun (Summon Agus)
 Blog             : bloggersmart.net - python.web.id
 License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 Documentation    : https://github.com/agusmakmun/Some-Examples-of-Simple-Python-Script/
-Powered          : Python-2.7
+Powered          : Python-2.7, mpg321
+
+[+]--- use --- [+]
+$sudo apt-get install mpg321
+$python Alarm\ with\ Timer.py
 """
 
 import time, os
