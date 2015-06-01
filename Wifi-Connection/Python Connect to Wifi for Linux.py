@@ -4,7 +4,7 @@ Created By       : Agus Makmun (Summon Agus)
 Blog             : bloggersmart.net - python.web.id
 License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 Documentation    : https://github.com/agusmakmun/Some-Examples-of-Simple-Python-Script/
-Powered          : Ubuntu 14.04, Python 2.7 (module wget)
+Powered          : Ubuntu 14.04, Python 2.7
 """
 
 import os, sys
