@@ -23,7 +23,7 @@ if inp_up_down == '1':
         os.system("iwconfig wlan0 essid "+masuk)
         os.system("dhclient wlan0")
     elif inp_connect == '2':
-	      print "Thankyou.."
+	print "Thankyou.."
         sys.exit()
 elif inp_up_down == '2':
     os.system("ifconfig wlan0 down")
