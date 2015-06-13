@@ -1,5 +1,5 @@
 """
-Name             : Bas 64 Encryption, encoder and decoder
+Name             : Base 64 Encryption, encoder and decoder
 Created By       : Agus Makmun (Summon Agus)
 Blog             : bloggersmart.net - python.web.id
 License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
