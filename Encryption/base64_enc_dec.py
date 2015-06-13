@@ -9,7 +9,7 @@ Powered          : Python-2.7
 
 import base64
 
-class Encode():
+class Encode:
     def _base16_encode(self, encode_string):
         encoder = base64.b16encode(encode_string)
         return encoder
@@ -35,7 +35,7 @@ class Encode():
         encoder = base64.urlsafe_b64encode(encode_string)
         return encoder
     
-class Decode():
+class Decode:
     def _base16_decode(self, decode_string):
         decoder = base64.b16decode(decode_string, casefol=False)
         return decoder
