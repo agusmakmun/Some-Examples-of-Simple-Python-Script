@@ -9,7 +9,7 @@
 ... 2. Setting    ---> cukup setting di bagian setting = dibawah 
 
 [ Note ]
-Baud = 460800   ---> tergantung provider
+Baud = 460800   ---> baud rate, tergantung modem
 """
 
 """
