@@ -1,8 +1,12 @@
 """
-1. Download Wvdial
-2. lsusb
-3. lsusb -v -d 12d1:1506   --> go to check idVendor and idProduct
-4. python wvdia.py
+1. Download Wvdial: http://ftp.us.debian.org/debian/pool/main/w/wvdial/
+2. cd /Download/
+3. sudo dpkg -i *.deb
+4. lsusb
+5. lsusb -v -d 12d1:1506   --> go to check idVendor and idProduct
+6. python wvdia.py
+... 1. Connect
+... 2. Setting    ---> cukup setting di bagian setting = dibawah 
 """
 
 """
