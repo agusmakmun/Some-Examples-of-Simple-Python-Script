@@ -7,6 +7,9 @@
 6. python wvdia.py
 ... 1. Connect
 ... 2. Setting    ---> cukup setting di bagian setting = dibawah 
+
+[ Note ]
+Baud = 460800   ---> tergantung provider
 """
 
 """
