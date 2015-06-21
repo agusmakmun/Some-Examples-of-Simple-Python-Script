@@ -4,7 +4,7 @@
 3. sudo dpkg -i *.deb
 4. lsusb
 5. lsusb -v -d 12d1:1506   --> go to check idVendor and idProduct
-6. python wvdia.py
+6. python wvdial.py
 ... 1. Connect
 ... 2. Setting    ---> cukup setting di bagian setting = dibawah 
 
