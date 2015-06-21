@@ -20,7 +20,7 @@ License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 Documentation    : https://github.com/agusmakmun/Some-Examples-of-Simple-Python-Script/
 """
 
-import os
+import os, sys
 idVendor = '0x12d1'
 idProduct = '0x1506'
 path = '/etc/wvdial.conf'
