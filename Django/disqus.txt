@@ -1,0 +1,18 @@
+http://django-disqus.readthedocs.org/en/latest/installation.html
+http://www.the-swamp.info/blog/adding-disqus-comments/
+https://help.disqus.com/customer/portal/articles/472007-i-m-receiving-the-message-%22we-were-unable-to-load-disqus-%22
+
+#------- settings.py
+INSTALLED_APPS = (
+     ...
+     'disqus',
+ )
+DISQUS_API_KEY = 'FOOBARFOOBARFOOBARFOOBARFOOBARF'
+DISQUS_WEBSITE_SHORTNAME = 'foobar'
+ 
+#------- template.html
+{% load disqus_tags %}
+{% set_disqus_identifier "blogentry_" object.title %}
+{% set_disqus_title page.title %}
+{% disqus_show_comments %}
+{% disqus_dev %}
