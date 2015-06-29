@@ -33,3 +33,7 @@ for post in soup.select('div.post'):
     result.append(split[3])
 
 print result[0]
+
+"""RESULT
+http://bloggersmart.net/wp-content/uploads/2015/06/7-Kapal-Pesiar-Terbesar-di-Dunia.jpg
+"""
