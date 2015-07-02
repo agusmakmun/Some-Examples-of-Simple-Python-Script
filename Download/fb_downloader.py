@@ -66,5 +66,5 @@ try:
     os.system('wget "'+dapat_link+'" -O my_video.mp4')
     print os.listdir('.')
     sys.exit()
-except IOError:
+except Exception:
     print "[-] Lost Connection"
