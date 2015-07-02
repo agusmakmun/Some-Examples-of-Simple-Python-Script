@@ -19,15 +19,6 @@ MAPPING = {
     '%26': '&',
 }
 
-def _getUrl_Image(url_video):
-    start = urllib.urlopen(url_video)
-    baca = start.read()
-    baca = baca[baca.find('<a class="z"')+len('<a class="z"'):]
-    split = baca.split('src=')
-    lokasi = split[1]
-    link_saved = lokasi[0:-31]
-    return link_saved
-
 def _initalize_url(url):
     origin_url = url
     saved = url.split('//')
@@ -42,6 +33,16 @@ def _initalize_url(url):
         print "    https://www.facebook.com/bloggersmart/videos/vb.1455759931350973/1620030731590558/?type=2&theater"
         print "    OR:"
         print "    https://m.facebook.com/story.php?story_fbid=1620030731590558&id=1455759931350973&_rdr\n[-]"
+
+
+def _getUrl_Image(url_video):
+    start = urllib.urlopen(url_video)
+    baca = start.read()
+    baca = baca[baca.find('<a class="z"')+len('<a class="z"'):]
+    split = baca.split('src=')
+    lokasi = split[1]
+    link_saved = lokasi[0:-31]
+    return link_saved
 
 def replace(match):
     return MAPPING[match.group(0)]
