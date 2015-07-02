@@ -33,9 +33,9 @@ def _initalize_url(url):
         print "    https://www.facebook.com/bloggersmart/videos/vb.1455759931350973/1620030731590558/?type=2&theater"
         print "    OR:"
         print "    https://m.facebook.com/story.php?story_fbid=1620030731590558&id=1455759931350973&_rdr\n[-]"
+        
 
-
-def _getUrl_Image(url_video):
+def _getUrl_Video(url_video):
     start = urllib.urlopen(url_video)
     baca = start.read()
     baca = baca[baca.find('<a class="z"')+len('<a class="z"'):]
@@ -50,16 +50,16 @@ def replace(match):
 try:
     inp_url_video = raw_input("[+] Please Paste link video from FB: \n -> ")
     saved_initialize = _initalize_url(inp_url_video)
-    url_video = _getUrl_Image(saved_initialize)
-    replace_url_video = saved_initialize.replace("www", "m")
-    url_video = _getUrl_Image(replace_url_video)
+    url_video = _getUrl_Video(saved_initialize)
     dapat_link = re.sub('%[A-Z0-9]{2}', replace, url_video)
+    
     if dapat_link[9:17] == 'fbstatic':
         print "[-] Upss sorry... you can't download this video because premission from facebook"
         print "[-] Please play before download in m.facebook.com/id_video"
         sys.exit()
     else:
         pass
+    
     print "[+] Your Links download of video:\n--------------------------\n", dapat_link, "\n--------------------------"
     print "[+] Starting download file..."
     print "[+] Your saved video is: my_video.mp4"
