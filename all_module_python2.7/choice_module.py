@@ -29,21 +29,18 @@ data = ['BaseHTTPServer', 'Bastion', 'CGIHTTPServer', 'ConfigParser', 'Cookie', 
         'urlparse', 'user', 'uu', 'uuid', 'warnings', 'wave', 'weakref', 'webbrowser', 'whichdb',
         'xdrlib', 'xmllib', 'xmlrpclib', 'zipfile']
 
+import os
 while True:
     print "[+] --------------------------------"
     print " 1. View all __builtins__"
-    print " 2. View all dir modules"
+    print " 2. View all modules from list data"
     print " 3. View all dir from modules"
-    print "[+] --------------------------------"
-    
-while True:
-    print "[+] --------------------------------"
-    print " 1. View all __builtins__"
-    print " 2. View all dir modules"
-    print " 3. View all dir from modules"
+    print " 4. View all modules from sys.modules"
+    print " 5. View all choice dir modules from sys.modules"
     print "[+] --------------------------------"
     
     inp_user = raw_input("Enter your choice: ")
+    os.system("clear")
     if inp_user == '1':
         print dir (__builtins__)
     elif inp_user == '2':
@@ -57,3 +54,17 @@ while True:
             
         except ImportError:
             print "\n[-] Upss... [",inp_module, "] not found at dir from modules.\n"
+
+    elif inp_user == '4':
+        import sys
+        print sys.modules.keys()
+
+    elif inp_user == '5':
+        inp_module = raw_input("Type your module (ex: time): ")
+        import importlib
+        try:
+            imp = importlib.import_module(inp_module)
+            print dir(imp)
+            
+        except ImportError:
+            print "\n[-] Upss... [",inp_module, "] not found dir modules from sys.modules\n"
