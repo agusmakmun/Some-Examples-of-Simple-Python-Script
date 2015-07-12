@@ -50,5 +50,9 @@ while True:
     elif inp_user == '3':
         inp_module = raw_input("Type your module (ex: zipfile): ")
         import importlib
-        imp = importlib.import_module(inp_module)
-        print dir(imp)
+        try:
+            imp = importlib.import_module(inp_module)
+            print dir(imp)
+            
+        except ImportError:
+            print "Upss...",inp_module, " not found at dir from modules."
