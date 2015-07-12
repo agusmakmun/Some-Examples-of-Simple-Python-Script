@@ -10,6 +10,7 @@ def buliltins():
 >>> type(a)
 <type 'dict'>
 >>> a.keys()
+['heapq', 'code', 'tkFileDialog', 'functools', 'random', 'subprocess', ---->> more ]
 """
 
 
