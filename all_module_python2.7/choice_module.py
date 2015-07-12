@@ -35,6 +35,13 @@ while True:
     print " 3. View all dir from modules"
     print "[+] --------------------------------"
     
+while True:
+    print "[+] --------------------------------"
+    print " 1. View all __builtins__"
+    print " 2. View all dir modules"
+    print " 3. View all dir from modules"
+    print "[+] --------------------------------"
+    
     inp_user = raw_input("Enter your choice: ")
     if inp_user == '1':
         print dir (__builtins__)
@@ -42,4 +49,6 @@ while True:
         print data
     elif inp_user == '3':
         inp_module = raw_input("Type your module (ex: zipfile): ")
-        print dir(inp_module)
+        import importlib
+        imp = importlib.import_module(inp_module)
+        print dir(imp)
