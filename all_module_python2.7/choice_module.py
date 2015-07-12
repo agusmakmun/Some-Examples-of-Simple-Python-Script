@@ -1,6 +1,7 @@
 """
 This script las modified from: 
 https://github.com/agusmakmun/Some-Examples-of-Simple-Python-Script/blob/master/grabbing/grab_modules_python2_v1.py
+Modified again for more from: https://hg.python.org/cpython/file/2.7/Lib/
 """
 
 data = ['BaseHTTPServer', 'Bastion', 'CGIHTTPServer', 'ConfigParser', 'Cookie', 'DocXMLRPCServer',
