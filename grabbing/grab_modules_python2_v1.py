@@ -1,3 +1,6 @@
+"""
+Modified again for more from: https://hg.python.org/cpython/file/2.7/Lib/
+"""
 
 def buliltins():
     print "------- This __builtsins__ (Built-in Functions) -------"
