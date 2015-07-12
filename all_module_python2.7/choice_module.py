@@ -55,4 +55,4 @@ while True:
             print dir(imp)
             
         except ImportError:
-            print "\n[-] Upss... [",inp_module, "] not found at dir from modules."
+            print "\n[-] Upss... [",inp_module, "] not found at dir from modules.\n"
