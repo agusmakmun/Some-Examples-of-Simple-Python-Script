@@ -1,5 +1,6 @@
 from django.template import loader, Context
 from django.db.models import Q
+from blog.views import Entry
 
 def search(request):
     query = request.GET['q']
