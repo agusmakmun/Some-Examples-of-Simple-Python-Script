@@ -25,7 +25,7 @@ class scureImage(object):
           print "+---------------------------------------+"
           file_open = raw_input("[+] Type file want to read.\n[+] >>> ")
           try:
-               print "[+] This is content of { "+file_open+" }"
+               print "[+] This content of { "+file_open+" }"
                print "+---------------------------------------+"
                print archive.read(file_open)
                print "+---------------------------------------+\n"
