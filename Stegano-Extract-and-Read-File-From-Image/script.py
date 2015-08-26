@@ -6,7 +6,7 @@ License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 Documentation    : https://github.com/agusmakmun/Some-Examples-of-Simple-Python-Script/
 """
 
-import os, commands
+import os
 import time, zipfile
 
 class scureImage(object):
