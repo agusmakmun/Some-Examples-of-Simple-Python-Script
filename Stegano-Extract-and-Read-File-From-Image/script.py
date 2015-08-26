@@ -37,7 +37,7 @@ class scureImage(object):
      def main(self):
           print "\nWelcome to Python Scure Image { STEGANO METHOD }"
           print "[+] Please choice this options:"
-          print " 1. Saved files at image."
+          print " 1. Saved files in image."
           print " 2. Open files in image."
           print " 3. Stegano read file from image.\n"
           
