@@ -21,3 +21,12 @@
    [+] Type your Zip file: backdoor.zip
    [+] Type New Image saved your zip: saved.png
    ['backdoor.zip', 'script.py', 'saved.png', 'image.png']
+
+4. You can access "saved.png" in the terminal like this:
+   $ python saved.png
+   
+   Optional Use:
+   $ python script.py
+   --->>> choice number 3 { Stegano read file from image }
+   --->>> type your image saved, ex { >>> saved.png }
+   --->>> choice number 2 { Execute file in image }
