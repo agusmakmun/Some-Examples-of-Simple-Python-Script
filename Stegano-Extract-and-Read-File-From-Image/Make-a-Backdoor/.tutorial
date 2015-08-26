@@ -1,0 +1,23 @@
+1. Create file "__main__.py", put some your script of python here.
+2. Saved your "__main__.py" into "backdoor.zip".
+   Then like this directory:
+   mydir/
+   ....backdoor.zip
+       ....__main__.py
+
+3. execute file "script.py" like this on terminal.
+   $ python script.py
+   
+	 Welcome to Python Scure Image { STEGANO METHOD }
+   [+] Please choice this options:
+    1. Saved files in image.
+    2. Extract files from image.
+    3. Stegano read file from image.
+
+   [+] >>> 1
+   ['backdoor.zip', 'script.py', 'image.png']
+   [+] Type Image file that will save your archive.
+   [+] >>> image.png
+   [+] Type your Zip file: backdoor.zip
+   [+] Type New Image saved your zip: saved.png
+   ['backdoor.zip', 'script.py', 'saved.png', 'image.png']
