@@ -47,7 +47,7 @@ class scureImage(object):
                print os.listdir(".")
                img = raw_input("[+] Type Image file that will save your archive.\n[+] >>> ")
                zip = raw_input("[+] Type your Zip file: ")
-               new_img = raw_input("[+] Type New Image saved your zip: ")
+               new_img = raw_input("[+] Type New Image that will save your zip: ")
                mome._secure(img, zip, new_img)
                print os.listdir(".")
                
