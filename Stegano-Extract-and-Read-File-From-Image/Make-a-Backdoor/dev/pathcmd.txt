@@ -1,5 +1,7 @@
 C:\\WINDOWS\system32\cmd.exe
-ssh -N agaust@gincung -L 22:127.0.0.1:22
+ssh -N user@server -L 22:127.0.0.1:22
+
+#https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding
 
 [ Requirements ]
 1. sudo apt-get install openssh-server
