@@ -1,1 +1,4 @@
 C:\\WINDOWS\system32\cmd.exe
+
+[ Requirements ]
+1. sudo apt-get install openssh-server { putty }
