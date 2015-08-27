@@ -1,4 +1,5 @@
 C:\\WINDOWS\system32\cmd.exe
 
 [ Requirements ]
-1. sudo apt-get install openssh-server { putty }
+1. sudo apt-get install openssh-server
+2. sudo apt-get install putty
