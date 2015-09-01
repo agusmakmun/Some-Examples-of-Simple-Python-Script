@@ -1,3 +1,4 @@
+<!-- simple pagination -->
 <div class="pagination">
     <span class="step-links">
         {% if articles.has_previous %}
@@ -12,4 +13,31 @@
             <a href="?page={{ articles.next_page_number }}">Next &raquo; </a>
         {% endif %}
     </span>
+</div>
+
+<!-- count number pagination -->
+<div class="pagination">
+   {% if articles.has_previous %}
+      <span class="page">
+      <a href="?page={{ articles.previous_page_number }}">&laquo; Prev</a>
+      </span>
+   {% endif %}
+   {% if show_first %}
+      <span class="page"><a href="?page=1">1</a></span>
+      <span class="ellipsis">...</span>
+   {% endif %}
+   {% for linkpage in articles.paginator.page_range %}
+      {% ifequal linkpage articles.number %}
+         <span class="current">{{ articles.number }}</span>
+      {% else %}
+         <span class="page"><a href="?page={{ linkpage }}">{{ linkpage }}</a></span>
+      {% endifequal %}
+   {% endfor %}
+   {% if show_last %}
+      <span class="ellipsis">...</span>
+      <span class="page"><a href="?page=last">{{ articles.paginator.num_pages }}</a></span>
+   {% endif %}
+   {% if articles.has_next %}
+      <span class="page"><a href="?page={{ articles.next_page_number }}">Next &raquo;</a></span>
+   {% endif %}
 </div>
