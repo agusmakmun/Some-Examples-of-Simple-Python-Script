@@ -81,7 +81,7 @@ http://stackoverflow.com/a/30864681
    <li><a href="?page=1">First</a></li>
   {% for linkpage in page_range %}
       {% ifequal linkpage articles.number %}
-         <li {% if not linkpage.show_last %}class="active"{% endif %}>
+         <li class="active">
            <a href="#">{{ articles.number }}<span class="sr-only">(current)</span></a>
          </li>
       {% else %}
