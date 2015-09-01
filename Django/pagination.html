@@ -73,3 +73,47 @@
 
 <!--- slicing page number -->
 http://stackoverflow.com/a/30864681
+<!-- Solved -->
+<ul class="pagination">
+  <li {% if not articles.has_previous %}class="disabled"{% endif %}>
+     <a {% if articles.has_previous %}href="?page={{ articles.previous_page_number }}" aria-label="Previous" {% endif %}><span aria-hidden="true">«</span></a>
+   </li>
+   <li><a href="?page=1">First</a></li>
+  {% for linkpage in page_range %}
+      {% ifequal linkpage articles.number %}
+         <li {% if not linkpage.show_last %}class="active"{% endif %}>
+           <a href="#">{{ articles.number }}<span class="sr-only">(current)</span></a>
+         </li>
+      {% else %}
+         <li><a href="?page={{ linkpage }}">{{ linkpage }}</a></li>
+      {% endifequal %}
+  {% endfor %}
+  <li><a href="?page={{ articles.paginator.num_pages }}">Last</a></li>
+  <li {% if not articles.has_next %}class="disabled"{% endif %}>
+     <a {% if articles.has_next %}href="?page={{ articles.next_page_number }}" aria-label="Next" {% endif %}><span aria-hidden="true">»</span></a>
+   </li>
+</ul>
+
+#views
+def displayAllArticlesUnderTage(request, tag_slug):
+    #Entry.objects.filter(~Q(id=1))
+    t = loader.get_template('all_tags.html')
+    tag = Tag.objects.get(slug = tag_slug)
+    articles = Entry.objects.filter(tags = tag.id)
+    paginator = Paginator(articles, 1) #show 10 articles per page
+    page = request.GET.get('page')
+    try:
+        articles_list = paginator.page(page)
+    except PageNotAnInteger:
+        articles_list = paginator.page(1)
+    except EmptyPage:
+        articles_list = paginator.page(paginator.num_pages)
+    index = articles_list.number - 1
+    limit = 3 #limit for show range left and right of number pages
+    max_index = len(paginator.page_range)
+    start_index = index - limit if index >= limit else 0
+    end_index = index + limit if index <= max_index - limit else max_index
+    page_range = paginator.page_range[start_index:end_index]
+
+    c = Context({ "articles" : articles_list, "tag_slug" : tag_slug, 'page_range': page_range,})
+    return HttpResponse(t.render(c))
