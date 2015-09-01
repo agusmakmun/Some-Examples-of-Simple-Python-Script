@@ -41,3 +41,31 @@
       <span class="page"><a href="?page={{ articles.next_page_number }}">Next &raquo;</a></span>
    {% endif %}
 </div>
+
+
+<!-- adding with bootstrap class pagination -->
+<ul class="pagination">
+  <li {% if not articles.has_previous %}class="disabled"{% endif %}>
+     <a {% if articles.has_previous %}href="?page={{ articles.previous_page_number }}" aria-label="Previous" {% endif %}><span aria-hidden="true">«</span></a>
+   </li>
+  {% if articles.show_first %}
+    <li><a href="?page=1">1</a></li>
+    <li><a href="#">...</a></li>
+  {% endif %}
+  {% for linkpage in articles.paginator.page_range %}
+      {% ifequal linkpage articles.number %}
+         <li class="active">
+           <a href="#">{{ articles.number }}<span class="sr-only">(current)</span></a>
+         </li>
+      {% else %}
+         <li><a href="?page={{ linkpage }}">{{ linkpage }}</a></li>
+      {% endifequal %}
+  {% endfor %}
+  {% if articles.show_last %}
+     <li><a href="#">...</a></li>
+     <li><a href="?page=last">{{ articles.paginator.num_pages }}</a></li>
+  {% endif %}
+  <li {% if not articles.has_next %}class="disabled"{% endif %}>
+     <a {% if articles.has_next %}href="?page={{ articles.next_page_number }}" aria-label="Next" {% endif %}><span aria-hidden="true">»</span></a>
+   </li>
+</ul>
