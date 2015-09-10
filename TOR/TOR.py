@@ -6,6 +6,14 @@ $ sudo service tor restart
 # https://www.youtube.com/watch?v=KDsmVH7eJCs
 # https://www.youtube.com/watch?v=3p-buQT72u0
 # http://my-ip.herokuapp.com
+
+>>> import httplib
+>>> conn = httplib.HTTPConnection("my-ip.herokuapp.com")
+>>> conn.request("GET", "/")
+>>> res = conn.getresponse()
+>>> res.read()
+'{\n  "ip": "180.252.181.92"\n}'
+>>> 
 """
 
 import os, sys, time, httplib
@@ -16,13 +24,6 @@ port = 9050
 ip = 'my-ip.heroku.com'
 
 class _TOR(object):
-    """
-    def __init__(self):
-        self.port       = 9050
-        self.new_port   = 9051
-        self.ip         = "my-ip.heroku.com"
-        self.localhost  = "127.0.0.1"
-    """
     port       = 9050
     new_port   = 9051
     ip         = "my-ip.heroku.com"
@@ -89,12 +90,3 @@ if __name__ == "__main__":
     elif _inpUsr == '2':
         os.system('sudo service tor stop')
 
-
-"""
->>> import httplib
->>> conn = httplib.HTTPConnection("my-ip.herokuapp.com")
->>> conn.request("GET", "/")
->>> res = conn.getresponse()
->>> res.read()
-'{\n  "ip": "180.252.181.92"\n}'
->>> 
