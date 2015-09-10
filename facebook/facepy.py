@@ -3,6 +3,7 @@ https://www.facebook.com/settings?tab=applications&section=all   --> change to p
 http://facepy.readthedocs.org/en/latest/usage/graph-api.html     --> docs graph api.
 https://developers.facebook.com/tools/explorer/                  --> change to allow some premission.
 https://github.com/jgorset/facepy                                --> repository.
+http://python.web.id/blog/menggunakan-graph-api-facebook-sangat-mudah-dengan-facepy/
 """
 
 from facepy import GraphAPI
