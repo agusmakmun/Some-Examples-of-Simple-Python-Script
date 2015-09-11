@@ -3,6 +3,7 @@ $ sudo apt-get install python-socksipy
 $ sudo apt-get install tor
 $ sudo service tor restart
 
+# setting your browser like this: http://i.imgur.com/2aHruSC.png
 # https://www.youtube.com/watch?v=KDsmVH7eJCs
 # https://www.youtube.com/watch?v=3p-buQT72u0
 # http://my-ip.herokuapp.com
