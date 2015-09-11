@@ -25,7 +25,7 @@ ip = 'my-ip.heroku.com'
 
 class _TOR(object):
     port       = 9050
-    new_port   = 9051
+    new_port   = 9050 #change to 9051, but isn't work.
     ip         = "my-ip.heroku.com"
     localhost  = "127.0.0.1"
         
