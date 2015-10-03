@@ -6,8 +6,7 @@ License          : GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 Documentation    : https://github.com/agusmakmun/Some-Examples-of-Simple-Python-Script/
 """
 
-import os, subprocess
-import re, time
+import time
 import mechanize
 from bs4 import BeautifulSoup
 
