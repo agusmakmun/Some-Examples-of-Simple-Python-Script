@@ -62,10 +62,7 @@ def irc_log():
             info = spl[3]
             user = spl[2].split("!")[0][2:]
             msg = str(text).split(channel)[-1][2:].replace("\\r\\n')", "")
-            
-            #if text.find('PING') != -1:                          #check if 'PING' is found
-            #    irc.send('PONG ' + text.split() [1] + '\r\n') #returnes 'PONG' back to the server (prevents pinging out!)
-                
+
             if info == 'JOIN':
                 print date, "| <"+user+"> |", ip, "| has joined", channel
                 log_logger.info("<"+user+"> | "+ip+" | has joined "+channel)
