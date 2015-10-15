@@ -47,7 +47,7 @@ def function_logger(file_level, console_level = None):
 
     file_log = os.path.join(path, "PL_")
     fh = logging.handlers.TimedRotatingFileHandler(file_log, when='midnight', utc=False)
-    fh.suffix = "%Y-%m-%d"
+    fh.suffix = "%Y-%m-%d" + ".txt"
     fh.setLevel(file_level)
     fh_format = logging.Formatter('%(asctime)s - %(message)s') #%(lineno)d - %(levelname)s - 
     fh.setFormatter(fh_format)
