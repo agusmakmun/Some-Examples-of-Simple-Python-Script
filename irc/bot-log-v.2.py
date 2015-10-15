@@ -30,7 +30,7 @@ date = str(datetime.datetime.now()).split('.')[0]
 
 import inspect
 import logging, os
-path = 'path-for/log-irc'
+path = 'log-irc'
 
 def function_logger(file_level, console_level = None):
     function_name = inspect.stack()[1][3]
