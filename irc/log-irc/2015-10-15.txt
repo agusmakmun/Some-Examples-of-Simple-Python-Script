@@ -1,0 +1,12 @@
+2015-10-15 14:48:19,040 - <aku> | ip.36.80.228.0 | was left.
+2015-10-15 14:49:42,486 - <summonagus> | ip.178.62.225.72 | has joined #python-learning
+2015-10-15 15:04:59,518 - <summonagus> | ip.178.62.225.72 | was left.
+2015-10-15 15:05:31,565 - <agus> | ip.36.80.228.0 | has joined #python-learning
+2015-10-15 15:09:01,158 - <agus> | ip.36.80.228.0 | was left.
+2015-10-15 19:18:10,591 - <summonagus> | ip.128.199.201.63 | has joined #python-learning
+2015-10-15 19:20:32,201 - <summonagus> | ip.128.199.201.63 | Message: saya disini
+2015-10-15 19:20:59,142 - <summonagus> | ip.128.199.201.63 | was left.
+2015-10-15 20:00:26,998 - <summonagus> | ip.128.199.201.63 | has joined #python-learning
+2015-10-15 20:21:09,622 - <summonagus> | ip.128.199.201.63 | Message: halo saya disini
+2015-10-15 21:27:43,893 - <summonagus> | ip.128.199.201.63 | Message: test bot log
+2015-10-15 21:31:54,576 - <summonagus> | ip.128.199.201.63 | was closed.
