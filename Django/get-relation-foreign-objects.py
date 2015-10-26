@@ -1,3 +1,5 @@
+#https://docs.djangoproject.com/en/dev/topics/db/queries/#caching-and-querysets
+
 class Data_Toko(models.Model):
   ....
 
