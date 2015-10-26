@@ -17,3 +17,8 @@ class Pengiriman(models.Model):
 >>> print ([p.metode_pengiriman for p in a])
 [u'Tiki', u'Pos Indonesia']
 >>> 
+>>> c = [str(p.metode_pengiriman) for p in a]
+>>> c
+['Tiki', 'Pos Indonesia']
+>>> 
+
