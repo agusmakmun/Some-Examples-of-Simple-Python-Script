@@ -21,4 +21,11 @@ class Pengiriman(models.Model):
 >>> c
 ['Tiki', 'Pos Indonesia']
 >>> 
+>>> for i in c:
+...     print i
+... 
+Tiki
+Pos Indonesia
+>>> 
+
 
