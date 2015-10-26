@@ -1,5 +1,6 @@
 #https://docs.djangoproject.com/en/dev/topics/db/queries/#caching-and-querysets
 
+#1. Just for one field: metode_pengiriman
 class Data_Toko(models.Model):
   ....
 
@@ -29,3 +30,14 @@ Pos Indonesia
 >>> 
 
 
+
+#for much more field:
+
+>>> from appearance.models import Data_Bank
+>>> a = Data_Bank.objects.all()
+>>> b = [ [p.nama_bank, p.no_rekening, p.pemilik_rekening] for p in a ]
+>>> b[0]
+[u'BRI', u'12345', u'Summon']
+>>> str(b[0][0])
+'BRI'
+>>> 
