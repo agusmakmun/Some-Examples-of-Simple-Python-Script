@@ -45,11 +45,9 @@ Pos Indonesia
 >>> from appearance.models import Data_Bank
 >>> a = Data_Bank.objects.all()
 >>> b = [ [p.nama_bank, p.no_rekening, p.pemilik_rekening] for p in a ]
->>> b
-[[u'BRI', u'12345', u'Summon'], [u'BNI', u'0987675', u'agus']]
 >>> for i in b:
-...     print i
+...     print i[0], i[1], i[2]
 ... 
-[u'BRI', u'12345', u'Summon']
-[u'BNI', u'0987675', u'agus']
->>>
+BRI 12345 Summon
+BNI 0987675 agus
+>>> 
