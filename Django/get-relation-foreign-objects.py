@@ -41,3 +41,15 @@ Pos Indonesia
 >>> str(b[0][0])
 'BRI'
 >>> 
+
+>>> from appearance.models import Data_Bank
+>>> a = Data_Bank.objects.all()
+>>> b = [ [p.nama_bank, p.no_rekening, p.pemilik_rekening] for p in a ]
+>>> b
+[[u'BRI', u'12345', u'Summon'], [u'BNI', u'0987675', u'agus']]
+>>> for i in b:
+...     print i
+... 
+[u'BRI', u'12345', u'Summon']
+[u'BNI', u'0987675', u'agus']
+>>>
