@@ -16,6 +16,15 @@
 >>> from PIL import ImageDraw
 >>> img = Image.open("world.jpg")
 >>> draw = ImageDraw.Draw(img)
+>>> font = ImageFont.truetype("Roboto-Regular-webfont.ttf", 16)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/local/lib/python2.7/dist-packages/PIL/ImageFont.py", line 260, in truetype
+    return FreeTypeFont(font, size, index, encoding)
+  File "/usr/local/lib/python2.7/dist-packages/PIL/ImageFont.py", line 140, in __init__
+    self.font = core.getfont(font, size, index, encoding)
+IOError: cannot open resource
+>>> 
 >>> font = ImageFont.truetype("Sawasdee.ttf", 16)
 >>> 
 >>> draw.text((0,0), "www.qafwah.com", (255,255,255), font=font)
