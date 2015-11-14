@@ -1,3 +1,4 @@
+#http://stackoverflow.com/a/16377244/3445802
 >>> from PIL import Image
 >>> from PIL import ImageFont
 >>> from PIL import ImageDraw 
@@ -8,7 +9,6 @@
 # draw.text((x, y),"Sample Text",(r,g,b))
 >>> draw.text((0, 0),"Sample Text",(255,255,255),font=font)
 >>> img.save('sample-out.jpg')
-
 
 
 >>> from PIL import Image
