@@ -31,7 +31,7 @@ for row in reader:
 sortED = sorted(out)
 f.close()
 
-print sortED
+#print sortED
 if inject_list not in sortED:
     for mhs in inject_list:
         if mhs == '':
