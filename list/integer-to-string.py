@@ -6,7 +6,7 @@ def ganti_variable(inputan):
         else:
             join = ' '.join(item)
             mapping = map(int, join.split())
-            listing = [ p*"X" for p in mapping ] #mapping if p%2 != 0 ]  --> cond
+            listing = [ p*"X" for p in mapping ] #or: [ p*"X" for p in mapping if p%2 != 0 and p > 2]  --> cond prime.
             print listing
             
 inputan = """
@@ -51,3 +51,23 @@ ganti_variable(inputan)
 ['XXXX', 'XXXXXXX', '', 'XX', 'XXXXXX', 'XXX']                                                                                                               
 ['XXXX', 'XXXXXXX', '', 'XXX', 'XXXXXXXX', 'XXXXXXXXX']                                                                                                      
 ['XXXX', 'XXXXXXX', '', 'XXXX', 'XXXXXX', 'X'] 
+
+
+Output2, prime:
+['XXXXXXX']                                                                                                                                                  
+['XXXXXXX', 'XXXXXXXXX']                                                                                                                                     
+[]                                                                                                                                                           
+['XXXXXXXXX', 'XXX']                                                                                                                                         
+['XXXXXXXXX', 'XXXXXXXXX', 'XXXXXXXXX']                                                                                                                      
+['XXXXXXXXX', 'XXXXXXXXX']                                                                                                                                   
+['XXXXXXXXX', 'XXX', 'XXX']                                                                                                                                  
+['XXXXXXXXX', 'XXX', 'XXXXXXXXX']                                                                                                                            
+['XXXXXXXXX', 'XXXXX', 'XXXXXXXXX']                                                                                                                          
+['XXXXXXXXX', 'XXXXXXX', 'XXXXXXX']                                                                                                                          
+['XXXXXXXXX']                                                                                                                                                
+['XXXXXXXXX', 'XXXXXXXXX', 'XXX', 'XXXXXXXXX']                                                                                                               
+['XXXXXXX']                                                                                                                                                  
+['XXXXXXX', 'XXXXXXX', 'XXXXXXXXX']                                                                                                                          
+['XXXXXXX', 'XXX']                                                                                                                                           
+['XXXXXXX', 'XXX', 'XXXXXXXXX']                                                                                                                              
+['XXXXXXX']
