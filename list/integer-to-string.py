@@ -6,7 +6,7 @@ def ganti_variable(inputan):
         else:
             join = ' '.join(item)
             mapping = map(int, join.split())
-            listing = [ p*"X" for p in mapping ]
+            listing = [ p*"X" for p in mapping ] #mapping if p%2 != 0 ]  --> cond
             print listing
             
 inputan = """
