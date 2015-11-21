@@ -6,7 +6,8 @@ def ganti_variable(inputan):
         else:
             join = ' '.join(item)
             mapping = map(int, join.split())
-            listing = [ p*"X" for p in mapping if p%2 != 0 and p > 2]
+            listing = [ p*"X" for p in mapping if p%2 != 0 and p > 2 or p == 2]
+            #print listing
             if len(listing) == 0:
                 pass
             else:
@@ -37,13 +38,14 @@ ganti_variable(inputan)
 
 
 
+
 #OUTPUT:
 XXXXX XXXXX XXXXXXX                                                                                                                                          
 XXXXXXX                                                                                                                                                      
 XXXXXXX XXXXXXXXX                                                                                                                                            
 XXXXXXXXX XXX                                                                                                                                                
 XXXXXXXXX XXXXXXXXX XXXXXXXXX                                                                                                                                
-XXXXXXXXX XXXXXXXXX                                                                                                                                          
+XXXXXXXXX XX XX XXXXXXXXX                                                                                                                                    
 XXXXXXXXX XXX XXX                                                                                                                                            
 XXXXXXXXX XXX XXXXXXXXX                                                                                                                                      
 XXXXXXXXX XXXXX XXXXXXXXX                                                                                                                                    
@@ -52,6 +54,6 @@ XXXXXXXXX
 XXXXXXXXX XXXXXXXXX XXX XXXXXXXXX                                                                                                                            
 XXXXXXX                                                                                                                                                      
 XXXXXXX XXXXXXX XXXXXXXXX                                                                                                                                    
-XXXXXXX XXX                                                                                                                                                  
+XXXXXXX XX XXX                                                                                                                                               
 XXXXXXX XXX XXXXXXXXX                                                                                                                                        
 XXXXXXX
