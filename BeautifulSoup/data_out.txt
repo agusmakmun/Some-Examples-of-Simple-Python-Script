@@ -1,0 +1,51 @@
+<strong><a href="http://bloggersmart.net/" target="_blank">BloggerSmart.net</a></strong> - <a href="http://bloggersmart.net/cara-install-xdman-terbaru-2015-dengan-tampilan-ui/">Cara Install XDMan Terbaru 2015 dengan tampilan UI</a>, Xtreme Download Manager (juga sering disebut Xdm atau XDMAN) merupakan salah satu software open source download manager yang berbasis java yang mendukung dibeberapa sistem operasi, termasuk Linux, Windows dan Mac OSX.
+
+XDMan juga mensupport di beberapa web browser seperti Firefox, Google Chrome, Opera, Safari, Internet Explorer, dan lain-lain.
+
+<strong>Subhra Das Gupta</strong> yang merupakan developer'nya telah memperbarui Xtreme Download Manager ini hingga versi 5.0.4 dengan tampilan terbarunya yaitu menggunakan konsep flat UI seperti ini.
+
+Mari kita lihat bagaimana perbedaan dari versi sekarang dan versi sebelumnya.
+
+[caption id="attachment_1779" align="aligncenter" width="700"]<a href="http://bloggersmart.net/wp-content/uploads/2015/08/Xtreme-Download-Manager-versi-lama.png"><img class="wp-image-1779 size-full" title="Xtreme Download Manager versi lama" src="http://bloggersmart.net/wp-content/uploads/2015/08/Xtreme-Download-Manager-versi-lama.png" alt="Xtreme Download Manager versi lama" width="700" height="400" /></a> Xtreme Download Manager versi lama (Source image: ubuntuportal.com)[/caption]
+
+[caption id="attachment_1780" align="aligncenter" width="700"]<a href="http://bloggersmart.net/wp-content/uploads/2015/08/Xtreme-Download-Manager-versi-baru.png"><img class="wp-image-1780 size-full" title="Xtreme Download Manager versi baru" src="http://bloggersmart.net/wp-content/uploads/2015/08/Xtreme-Download-Manager-versi-baru.png" alt="Xtreme Download Manager versi baru" width="700" height="400" /></a> Xtreme Download Manager versi baru (Source image: ubuntuportal.com)[/caption]
+<h3>Berikut ini fitur utama dari Xtreme Download Manager (XDM):</h3>
+<ul>
+	<li>Download file di kecepatan maksimum yang mungkin. (5-6 kali lebih cepat, tergantung pada koneksi).</li>
+	<li>Supports HTTP, HTTPS, FTP protokol dengan Authentication, Proxy Server, Cookies, Redirection dll.</li>
+	<li>Pause / resume broken / gagal mendownload biasanya disebabkan oleh masalah koneksi, listrik atau sesi yang telah kedaluwarsa.</li>
+	<li>Algoritma segmentasi file canggih yang dinamis, data compression &amp; connection reuse.</li>
+	<li>Dapat Men-download video yang berekstensi FLV, MP4, HTML5 dari seluruh web.</li>
+	<li>Capture download dari browser apapun (Firefox, Chrome, Internet Explorer, Opera, Safari atau program lain mencoba untuk men-download file dari internet).</li>
+	<li>Dibuat dan dikhususkan sebagai software downloader video, HTTP Traffic monitor, Batch downloader.</li>
+	<li>Dapat dikonfigurasi untuk melakukan Automatic Antivirus checking, fitur shutdown sistem apabila telah selesai mendownload.</li>
+	<li>Berjalan pada Mayor O.S dengan Java SE 6 atau versi diatasnya.</li>
+</ul>
+<h3>Cara Instal Xtreme Download Manager di Ubuntu Linux</h3>
+Ada 2 metode untuk menginstal Xtreme Download Manager di Ubuntu 12.04 / 14.04 / 14.10 / 15.04 / 15.10, Linux mint, elementary os dan turunannya.
+<ol>
+	<li>Metode pertama, download langsung dari halaman <a href="http://xdman.sourceforge.net/download.html" target="_blank">Download resmi XDM</a>.</li>
+	<li>Metode kedua - dengan menambahkan ppa oleh Noobslabs (ppa:noobslab/apps) kemudian instal xdman.</li>
+</ol>
+<h4>1. Metode Pertama, (download &gt;&gt; extract &gt;&gt; install)</h4>
+<strong>Untuk 32-Bit.</strong>
+<pre>$ wget http://sourceforge.net/projects/xdman/files/xdm-jre-32bit.tar.xz
+$ tar -xvf xdm-jre-32bit.tar.xz
+$ cd xdm
+$ ./xdm
+</pre>
+<strong>Untuk 64-Bit.</strong>
+<pre>$ wget http://sourceforge.net/projects/xdman/files/xdm-jre-64bit.tar.xz
+$ tar -xvf xdm-jre-64bit.tar.xz
+$ cd xdm
+$ ./xdm
+</pre>
+<h4>2. Metode Kedua, (add repository &gt;&gt; update &gt;&gt; install)</h4>
+<pre>$ sudo add-apt-repository ppa:noobslab/apps
+$ sudo apt-get update
+$ sudo apt-get install xdman
+</pre>
+
+Semoga bermanfaat.
+
+<code>Source: http://ubuntuportal.com/2015/08/xtreme-download-manager-ubuntu.html</code>
