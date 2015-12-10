@@ -14,9 +14,7 @@ def blog_tags():
 	all_blog_entry = Entry.objects.published()[:5]
 	all_blog_entry = [ [p.title, p.slug, p.tags, p.body, p.created ] for p in all_blog_entry ]
 	out = []
-	counter = 0
 	for item in all_blog_entry:
-		counter += 1
 		title = str(item[0])
 		slug = str(item[1])
 		tags = item[2].all()
