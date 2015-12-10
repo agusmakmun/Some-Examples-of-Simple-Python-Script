@@ -1,8 +1,11 @@
 """
-Refference: http://chriskief.com/2014/05/11/django-template-tag-for-truncating-characters-at-a-word-boundary/
+Refference:
+- http://chriskief.com/2014/05/11/django-template-tag-for-truncating-characters-at-a-word-boundary/
+- https://github.com/django/django/blob/master/django/template/defaultfilters.py#L16
 """
 
 from django import template
+from django.utils.html import strip_tags
 from blog.models import Entry, Tag
 register = template.Library()
 #all_blog_tags = Tag.objects.all()
@@ -28,8 +31,8 @@ def blog_tags():
 					truncd_val = truncd_val[:truncd_val.rfind(' ')]
 				return truncd_val + '...'
 			return value
-		body = smart_truncate_chars(str(item[3]), 10) #str(item[3])
+		body = smart_truncate_chars(str(item[3]), 20) #str(item[3])
 		created = str(item[4])
-		out.append('%s %s %s %s %s' % (title, slug, tmp_tags_slug, body, created))
+		out.append('%s %s %s %s %s' % (title, slug, tmp_tags_slug, strip_tags(body), created))
 	
 	return ''.join(out)
