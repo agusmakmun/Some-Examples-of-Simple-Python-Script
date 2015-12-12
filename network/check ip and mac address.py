@@ -6,5 +6,5 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> commands.getoutput('ifconfig wlan0').split()[6][5:]
 '192.168.1.17'
 >>> commands.getoutput('ifconfig wlan0').split()[4][0:]
-'2d:c0:5b:d6:81:f0'
+'2d:c0:5b:2s:91:df'
 >>> 
