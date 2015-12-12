@@ -38,3 +38,9 @@ urlpatterns = [
 		{{ object.body|safe }}
 	</div>
 {% endblock %}
+
+"""
+function "get_absolute_url(self):" in "models.py" has reserve with name "page_detail" and with adding kwargs is "slug". 
+So, in your "urls.py", put name of "slug" from your "models.py" and with 'name="page_detail"'.
+And then, in your templates you can call with: {% url "page_detail" slug=object.slug %}
+"""
