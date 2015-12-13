@@ -29,7 +29,7 @@ def blog_tags():
 					truncd_val = truncd_val[:truncd_val.rfind(' ')]
 				return truncd_val + '...'
 			return value
-		body = smart_truncate_chars(str(item[3]), 20) #str(item[3])
+		body = smart_truncate_chars(str(item[3].encode('utf-8')), 20) #str(item[3])
 		created = str(item[4])
 		out.append('%s %s %s %s %s' % (title, slug, tmp_tags_slug, strip_tags(body), created))
 	
