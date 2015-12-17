@@ -11,21 +11,21 @@ urlpatterns = [
 <h3>In: templates.html</h3>
 Change your: <code>request.get_full_path</code>
 <pre>
-<li {% if request.get_full_path == "/accounts/transaksi/new/" %}class="active"{% endif %}>
-	<a href="{% url "new_transaksi_member_page" %}">
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Kirim Transaksi
-	</a>
-</li>
+&lt;li {% if request.get_full_path == &quot;/accounts/transaksi/new/&quot; %}class=&quot;active&quot;{% endif %}&gt;
+	&lt;a href=&quot;{% url &quot;new_transaksi_member_page&quot; %}&quot;&gt;
+		&lt;span class=&quot;glyphicon glyphicon-plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Kirim Transaksi
+	&lt;/a&gt;
+&lt;/li&gt;
 </pre>
 
 <b>To:</b> <code>request.resolver_match.url_name</code>
 
 <pre>
-<li {% if request.resolver_match.url_name == "new_transaksi_member_page" %}class="active"{% endif %}>
-	<a href="{% url "new_transaksi_member_page" %}">
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Kirim Transaksi
-	</a>
-</li>
+&lt;li {% if request.resolver_match.url_name == &quot;new_transaksi_member_page&quot; %}class=&quot;active&quot;{% endif %}&gt;
+	&lt;a href=&quot;{% url &quot;new_transaksi_member_page&quot; %}&quot;&gt;
+		&lt;span class=&quot;glyphicon glyphicon-plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Kirim Transaksi
+	&lt;/a&gt;
+&lt;/li&gt;
 </pre>
 
 Refference:
