@@ -12,7 +12,7 @@
     &lt;/div&gt;
     {% else %}
     &lt;div class=&quot;inline {{ formset_foto.prefix }}&quot;&gt;
-        &lt;!-- form, is default --&gt;
+        &lt;!-- form: is default --&gt;
         {% for photo in form.visible_fields %}
         	&lt;img src=&quot;/gallery/{{ photo.value }}&quot;&gt;
         {% endfor %}
