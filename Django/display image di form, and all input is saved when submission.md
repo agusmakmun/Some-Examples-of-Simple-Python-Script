@@ -1,4 +1,6 @@
-<h3>This method using <code>inlineformset_factory</code></h3>
+<h3>Display image di form, and all input is saved when submission</h3>
+<p>This method using <code>inlineformset_factory</code><p>
+
 <pre>
 &lt;fieldset class=&#39;fieldset&#39;&gt;
 &lt;legend class=&quot;alert alert-info&quot;&gt;Foto Bukti Pembayaran&lt;/legend&gt;
