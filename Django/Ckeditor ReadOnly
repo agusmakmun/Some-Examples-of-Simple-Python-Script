@@ -1,0 +1,8 @@
+#Reff: http://stackoverflow.com/a/11061526/3445802
+#put this in your page, this if you want disable ckeditor automatic when document is loaded:
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        CKEDITOR.config.readOnly = true;
+    });
+</script>
