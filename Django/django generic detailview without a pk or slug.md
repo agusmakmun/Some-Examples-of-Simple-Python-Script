@@ -1,4 +1,5 @@
-#Refference: http://chriskief.com/2012/12/29/django-generic-detailview-without-a-pk-or-slug/
+Refference: http://chriskief.com/2012/12/29/django-generic-detailview-without-a-pk-or-slug/
+
 This automatic for user was loggin.
 
 <pre>
