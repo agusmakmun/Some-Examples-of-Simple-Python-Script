@@ -28,3 +28,16 @@ class Dashboard_Member(generic.DetailView):
 		return get_object_or_404(User, pk=self.request.user.id)
 </pre>
 
+
+Or like this:
+<pre>
+from member.models import Member
+
+class Dashboard_Member(generic.DetailView):
+	template_name = "dashboard_member.html"
+
+	def get_object(self):
+		user_loggin = get_object_or_404(User, pk=self.request.user.id)
+		return models.Member.objects.get(username=user_loggin.username, email=user_loggin.email)
+
+</pre>
