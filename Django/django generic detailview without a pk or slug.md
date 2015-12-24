@@ -20,8 +20,10 @@ Also note that the model is no longer necessary as you’re explicitly calling i
 Or like this:
 
 <pre>
+from member.models import Member
+
 class Dashboard_Member(generic.DetailView):
-	model = models.Member
+	model = Member
 	template_name = "dashboard_member.html"
 
 	def get_object(self):
@@ -38,6 +40,6 @@ class Dashboard_Member(generic.DetailView):
 
 	def get_object(self):
 		user_loggin = get_object_or_404(User, pk=self.request.user.id)
-		return models.Member.objects.get(username=user_loggin.username, email=user_loggin.email)
+		return Member.objects.get(username=user_loggin.username, email=user_loggin.email)
 
 </pre>
