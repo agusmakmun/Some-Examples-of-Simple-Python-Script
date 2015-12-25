@@ -1,0 +1,10 @@
+#Refference:
+- https://docs.djangoproject.com/en/1.9/ref/models/instances/#how-django-knows-to-update-vs-insert
+- http://stackoverflow.com/a/13901502/3445802
+
+>>> from member.models import Member
+>>> Member.objects.get(pk=2).member_aktif
+>>> True
+>>> a = Member.objects.filter(pk=2).update(member_aktif=False)
+>>> Member.objects.get(pk=2).member_aktif
+>>> False
