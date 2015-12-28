@@ -96,3 +96,49 @@ class Transaksi(models.Model):
 
 </pre>
 
+
+#templatetags/get_sum_transaksi_member.py
+You can set more filter as you need.
+<pre>
+def set_transaksi_by_month(user_id):
+	try:
+		user = User.objects.get(pk=user_id)
+		return Transaksi.objects.filter(member=user)\
+								.filter(publish=True)\
+								.filter(created__month=MONTH_NOW)\
+								.filter(created__year=YEAR_NOW)\
+								.filter(status_konfirmasi='diterima')
+	except: pass
+
+"""*) Set Tags 1: For tags by Sum of Transactions"""
+@register.simple_tag
+def get_sum_transaksi_user_by_month(user_id):
+	""" tags: {% get_sum_transaksi_user_by_month user_id=user_affiliate.id %}"""
+	return set_transaksi_by_month(user_id).count()
+</pre>
+
+#templates/list_most_member_transactions_admin_dashboard.html
+You can showing it as same as like this.
+<pre>
+<h3 class="most_10">Bulan ini</h3>
+    <table class="table table-striped table-bordered table-responsive">
+      <thead>
+          <tr>
+          	<th>Juara</th>
+          	<th>Username</th>
+          	<th>ID Member</th>
+          	<th>Jumlah Transfer</th>
+          </tr>
+      </thead> 
+    	<tbody>
+      	{% for member in top_member_transfer_by_month %}
+      		<tr>
+      			<td>{{ forloop.counter }}</td>
+      			<td>{{ member.username }}</td>
+      			<td>{% load id_transaksi_member %}{% get_id_for_detail_member member_id=member.pk %}</td>
+      			<td>{% load get_sum_transaksi_member %}{% get_sum_transfer_by_month user_id=member.pk %}</td>
+      		</tr>
+      	{% endfor %}
+      </tbody>
+    </table>
+</pre>
