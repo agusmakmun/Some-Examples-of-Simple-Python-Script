@@ -121,25 +121,25 @@ def get_sum_transaksi_user_by_month(user_id):
 #templates/list_most_member_transactions_admin_dashboard.html
 You can showing it as same as like this.
 <pre>
-<h3 class="most_10">Bulan ini</h3>
-    <table class="table table-striped table-bordered table-responsive">
-      <thead>
-          <tr>
-          	<th>Juara</th>
-          	<th>Username</th>
-          	<th>ID Member</th>
-          	<th>Jumlah Transfer</th>
-          </tr>
-      </thead> 
-    	<tbody>
+&lt;h3 class=&quot;most_10&quot;&gt;Bulan ini&lt;/h3&gt;
+    &lt;table class=&quot;table table-striped table-bordered table-responsive&quot;&gt;
+      &lt;thead&gt;
+          &lt;tr&gt;
+          	&lt;th&gt;Juara&lt;/th&gt;
+          	&lt;th&gt;Username&lt;/th&gt;
+          	&lt;th&gt;ID Member&lt;/th&gt;
+          	&lt;th&gt;Jumlah Transfer&lt;/th&gt;
+          &lt;/tr&gt;
+      &lt;/thead&gt; 
+    	&lt;tbody&gt;
       	{% for member in top_member_transfer_by_month %}
-      		<tr>
-      			<td>{{ forloop.counter }}</td>
-      			<td>{{ member.username }}</td>
-      			<td>{% load id_transaksi_member %}{% get_id_for_detail_member member_id=member.pk %}</td>
-      			<td>{% load get_sum_transaksi_member %}{% get_sum_transfer_by_month user_id=member.pk %}</td>
-      		</tr>
+      		&lt;tr&gt;
+      			&lt;td&gt;{{ forloop.counter }}&lt;/td&gt;
+      			&lt;td&gt;{{ member.username }}&lt;/td&gt;
+      			&lt;td&gt;{% load id_transaksi_member %}{% get_id_for_detail_member member_id=member.pk %}&lt;/td&gt;
+      			&lt;td&gt;{% load get_sum_transaksi_member %}{% get_sum_transfer_by_month user_id=member.pk %}&lt;/td&gt;
+      		&lt;/tr&gt;
       	{% endfor %}
-      </tbody>
-    </table>
+      &lt;/tbody&gt;
+    &lt;/table&gt;
 </pre>
