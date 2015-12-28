@@ -28,13 +28,14 @@ class Transaksi(models.Model):
 			2. {% get_sum_transaksi_user_by_year user_id=user_affiliate.id %}	: to see by this year.
 			3. {% get_sum_transaksi_user_by_global user_id=user_affiliate.id %}	: to see by global transactions.
 
-		from django.db.models import Count
+		from django.db.models import Count, Sum
 		from django.contrib.auth.models import User
 		
 		import time
 		MONTH_NOW = time.strftime("%m")
 		YEAR_NOW = time.strftime("%Y")
 
+		#filtering 10 top member by most created a transaction in this month.
 		top_member_transaksi_by_month = User.objects.filter(transaksi_user_affiliate__created__month=MONTH_NOW, 
 													 transaksi_user_affiliate__created__year=YEAR_NOW,
 													 transaksi_user_affiliate__publish=True,
@@ -42,23 +43,38 @@ class Transaksi(models.Model):
 													).annotate(numb_trans=Count('transaksi_user_affiliate__id'))\
 													 .order_by('-numb_trans')[:10]
 
+		#filtering 10 top member by most created a transaction in this year.
 		top_member_transaksi_by_year = User.objects.filter(transaksi_user_affiliate__created__year=YEAR_NOW,
-															transaksi_user_affiliate__publish=True,
-															transaksi_user_affiliate__status_konfirmasi='diterima'
-															).annotate(numb_trans=Count('transaksi_user_affiliate__id'))\
-													 		.order_by('-numb_trans')[:10]
+													transaksi_user_affiliate__publish=True,
+													transaksi_user_affiliate__status_konfirmasi='diterima'
+													).annotate(numb_trans=Count('transaksi_user_affiliate__id'))\
+													 .order_by('-numb_trans')[:10]
 
+		#filtering 10 top member by most created a transaction by global.
+		top_member_transaksi_by_global = User.objects.filter(transaksi_user_affiliate__publish=True,
+													transaksi_user_affiliate__status_konfirmasi='diterima'
+													).annotate(numb_trans=Count('transaksi_user_affiliate__id'))\
+													 .order_by('-numb_trans')[:10]
+
+		#filtering 10 top member by most transfer in this month.
 		top_member_transfer_by_month = User.objects.filter(transaksi_user_affiliate__created__month=MONTH_NOW, 
 													 transaksi_user_affiliate__created__year=YEAR_NOW,
 													 transaksi_user_affiliate__publish=True,
 													 transaksi_user_affiliate__status_konfirmasi='diterima'
-													).annotate(numb_transfer=Count('transaksi_user_affiliate__jumlah_uang_transfer'))\
+													).annotate(numb_transfer=Sum('transaksi_user_affiliate__jumlah_uang_transfer'))\
 													 .order_by('-numb_transfer')[:10]
 
+		#filtering 10 top member by most transfer in this year.
 		top_member_transfer_by_year = User.objects.filter(transaksi_user_affiliate__created__year=YEAR_NOW,
 													 transaksi_user_affiliate__publish=True,
 													 transaksi_user_affiliate__status_konfirmasi='diterima'
-													).annotate(numb_transfer=Count('transaksi_user_affiliate__jumlah_uang_transfer'))\
+													).annotate(numb_transfer=Sum('transaksi_user_affiliate__jumlah_uang_transfer'))\
+													 .order_by('-numb_transfer')[:10]
+
+		#filtering 10 top member by most transfer by global transfer.
+		top_member_transfer_by_global = User.objects.filter(transaksi_user_affiliate__publish=True,
+													 transaksi_user_affiliate__status_konfirmasi='diterima'
+													).annotate(numb_transfer=Sum('transaksi_user_affiliate__jumlah_uang_transfer'))\
 													 .order_by('-numb_transfer')[:10]
 		
 		#do something ro render
