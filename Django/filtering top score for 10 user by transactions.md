@@ -30,9 +30,9 @@ class Transaksi(models.Model):
 		"""Get Annotation from user, ordered by `10 most user was create transactions`, 
 		*) using this some tags get sum of transactions filtering by `user`, this month, this year or another filter: 
 		+) templatetags tags: {% load get_sum_transaksi_member %}
-			1. {% get_sum_transaksi_user_by_month user_id=user_affiliate.id %}	: to see by this month.
-			2. {% get_sum_transaksi_user_by_year user_id=user_affiliate.id %}	: to see by this year.
-			3. {% get_sum_transaksi_user_by_global user_id=user_affiliate.id %}	: to see by global transactions.
+			1. {% get_sum_transaksi_user_by_month user_id=member.pk %}	: to see by this month.
+			2. {% get_sum_transaksi_user_by_year user_id=member.pk %}	: to see by this year.
+			3. {% get_sum_transaksi_user_by_global user_id=member.pk %}	: to see by global transactions.
 
 		from django.db.models import Count, Sum
 		from django.contrib.auth.models import User
