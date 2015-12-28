@@ -1,5 +1,6 @@
 Filtering top score for 10 user by transactions.<br />
-Thanks to: Sutrisno Efendi, to help this problem.
+Thanks to: Sutrisno Efendi, to help this problem.<br />
+Asked: http://stackoverflow.com/q/34489680/3445802
 
 #modles.py
 <pre>
