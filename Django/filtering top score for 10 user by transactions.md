@@ -7,7 +7,7 @@ Some Refference:
 - https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/#conditional-expressions
 - https://docs.djangoproject.com/en/1.9/ref/models/querysets/
 
-#modles.py
+###modles.py
 <pre>
 class Transaksi(models.Model):
 	"""Detail Produk dan Member"""
@@ -21,7 +21,7 @@ class Transaksi(models.Model):
 	tanggal_transfer		= models.DateTimeField(default=now_timezone())
 </pre>
 
-#views.py
+###views.py
 <pre>
 	def most_member_transactions(self, request):
 		if request.user.is_anonymous():
@@ -98,7 +98,7 @@ class Transaksi(models.Model):
 </pre>
 
 
-#templatetags/get_sum_transaksi_member.py
+###templatetags/get_sum_transaksi_member.py
 You can set more filter as you need.
 <pre>
 def set_transaksi_by_month(user_id):
@@ -118,7 +118,7 @@ def get_sum_transaksi_user_by_month(user_id):
 	return set_transaksi_by_month(user_id).count()
 </pre>
 
-#templates/list_most_member_transactions_admin_dashboard.html
+###templates/list_most_member_transactions_admin_dashboard.html
 You can showing it as same as like this.
 <pre>
 &lt;h3 class=&quot;most_10&quot;&gt;Bulan ini&lt;/h3&gt;
