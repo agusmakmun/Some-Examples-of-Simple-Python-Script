@@ -1,6 +1,7 @@
 Filtering top score for 10 user by transactions.<br />
 Thanks to: Sutrisno Efendi, to help this problem.<br />
 Asked: http://stackoverflow.com/q/34489680/3445802
+
 Some Refference: 
 - http://stackoverflow.com/a/31853259/3445802
 - https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/#conditional-expressions
