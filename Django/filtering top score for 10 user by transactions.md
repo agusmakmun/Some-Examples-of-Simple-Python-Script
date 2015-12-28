@@ -82,6 +82,17 @@ class Transaksi(models.Model):
 													).annotate(numb_transfer=Sum('transaksi_user_affiliate__jumlah_uang_transfer'))\
 													 .order_by('-numb_transfer')[:10]
 		
-		#do something ro render
+		args = {
+				'user': request.user,
+				'top_member_transaksi_by_month': top_member_transaksi_by_month,
+				'top_member_transaksi_by_year': top_member_transaksi_by_year,
+				'top_member_transaksi_by_global': top_member_transaksi_by_global,
+
+				'top_member_transfer_by_month': top_member_transfer_by_month,
+				'top_member_transfer_by_year': top_member_transfer_by_year,
+				'top_member_transfer_by_global': top_member_transfer_by_global,
+				}
+		return render_to_response('list_most_member_transactions_admin_dashboard.html', args)
+
 </pre>
 
