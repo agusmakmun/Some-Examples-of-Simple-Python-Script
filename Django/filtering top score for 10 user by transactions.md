@@ -119,7 +119,7 @@ def get_sum_transaksi_user_by_month(user_id):
 </pre>
 
 ###templates/list_most_member_transactions_admin_dashboard.html
-You can showing it as same as like this.
+You can showing it similar like this.
 <pre>
 &lt;h3 class=&quot;most_10&quot;&gt;Bulan ini&lt;/h3&gt;
     &lt;table class=&quot;table table-striped table-bordered table-responsive&quot;&gt;
