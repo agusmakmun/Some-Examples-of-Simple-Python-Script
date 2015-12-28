@@ -7,6 +7,10 @@ Some Refference:
 - https://docs.djangoproject.com/en/1.8/ref/models/conditional-expressions/#conditional-expressions
 - https://docs.djangoproject.com/en/1.9/ref/models/querysets/
 
+###Screenshot Solved
+<img src="http://i.imgur.com/o9bUJcC.png">
+<img src="http://i.imgur.com/Gx71fnZ.png">
+
 ###modles.py
 <pre>
 class Transaksi(models.Model):
