@@ -6,6 +6,7 @@ import time, os
 import sys, fileinput
 from bs4 import BeautifulSoup
 
+
 class Grabber(object):
     def use(self):
         print ""
@@ -57,9 +58,10 @@ class Grabber(object):
             sys.exit("[-] Fucking Damn!!\n[?] Use similiar this: " + self.help)
         
         print "[+] Your args is: ./notes.py", args, sys.argv[2]
-        print " -------------------------------------- "
+        
         try:
             with open(sys.argv[2], "r") as f:
+                print " -------------------------------------- "
                 for line in f:
                     print line.replace("\n", "")
                     time.sleep(0.3)
@@ -68,7 +70,7 @@ class Grabber(object):
         except IOError:
             sys.exit("[-] File Doesn't exists!!"+\
                      "\n[?] This your path now: " +str(os.getcwd())+\
-                     "\n[?] This files and foldes in your path now: " + str(os.listdir('.')) )
+                     "\n[?] This files and folders in your path now: " + str(os.listdir('.')) )
 
     def delnote(self, args):
         self.help = "./notes.py delnote <file_name> <numb_line>"
@@ -141,3 +143,4 @@ if __name__ == "__main__":
             print "Funcking damn!, please checkout your input"
     except IndexError:
         mome.use()
+
