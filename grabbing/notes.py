@@ -93,7 +93,7 @@ class Grabber(object):
         
     def addurl(self, args):
         self.help = "./notes.py addurl <file_name> <url>"
-        if len(sys.argv) < 4:
+        if len(sys.argv) < 3:
             sys.exit("[-] Fucking Damn!!\n[?] Use similiar this: " + self.help)
 
         url = str(sys.argv[3])
