@@ -14,7 +14,7 @@ class Grabber(object):
         print "* For license just fucking to change this. ^Summon Agus Created."
         print "-------------------------------------------------------------------------------------"
         print "[1] Add Note         : ./notes.py addnote <file_name> <title> <content> <tag1, tag2>"
-        print "[2] List Note        : ./notes.py listnotes <file_name>"
+        print "[2] List Note        : ./notes.py listnote <file_name>"
         print "[3] Delete Note      : ./notes.py delnote <file_name> <numb_line>"
         print "[4] Add Url to Grab  : ./notes.py addurl <file_name> <url>"
         print "-------------------------------------------------------------------------------------"
@@ -52,8 +52,8 @@ class Grabber(object):
         time.sleep(1)
         print "[>] Your note was saved in <"+ f_note_out +">"
 
-    def listnotes(self, args):
-        self.help = "./notes.py listnotes <file_name>"
+    def listnote(self, args):
+        self.help = "./notes.py listnote <file_name>"
         if len(sys.argv) < 2:
             sys.exit("[-] Fucking Damn!!\n[?] Use similiar this: " + self.help)
         
@@ -133,8 +133,8 @@ if __name__ == "__main__":
         args = str(sys.argv[1])
         if args == 'addnote':
             mome.addnote(args)
-        elif args == 'listnotes':
-            mome.listnotes(args)
+        elif args == 'listnote':
+            mome.listnote(args)
         elif args == 'delnote':
             mome.delnote(args)
         elif args == 'addurl':
