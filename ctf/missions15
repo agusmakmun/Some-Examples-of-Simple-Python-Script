@@ -1,0 +1,35 @@
+#http://ctfs.me/missions/15
+
+http://ctfs.me/web/web300/?kunci=[key]
+
+<?php
+@set_time_limit(0);
+require_once('flag.php');
+//$are = array("c3RybGVu", "YmFzZTY0X2RlY29kZQ==", "a3VuY2k","eFhyTA==", "T3hjelo=" ,"aXNzZXQ=","dyEjJA==","JF9HRVQ=","dXNsZWVw","ZGll","Q29iYSBsYWdp","U2FsYWggZ2FuIQ==");
+$are = array("strlen", "base64_decode", "kunci", "xXrL", "OxczZ", "isset", "w!#$", "$_GET", "usleep", "die", "Coba lagi", "Salah gan!");
+
+$a = $are[0];
+$b = $are[8];
+$c = $are[9];
+$d = $are[10];
+$e = $are[11];
+
+if(isset($_GET[$are[2]])){//base64_decode
+    $key = $_GET[$are[2]];//get kunci, ?kunci=[something]
+    if($a($key)!=5){ //if strlen != 5, harus 5 huruf
+                echo $d;//coba lagi
+        $c();//die
+        }
+    for($i=0;$i<$a($key);$i++)
+    {
+        //$i = 01234
+        $KEY=$KEYS;
+        if($key[$i]!=$KEY[$i]){
+                        echo $e; //?kunci=abcde
+            $c();//die
+                }
+                $b(200000);//usleep
+    }
+    echo $flag;
+}
+?>
