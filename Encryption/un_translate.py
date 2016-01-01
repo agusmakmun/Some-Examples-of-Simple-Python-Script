@@ -13,6 +13,10 @@ import string, sys
 >>> 
 
 [2] Test it:
+agaust@agaust:~/Python-Code/Translate$ python un_translate.py right 3 "Uwooqp Ciwu"
+Vxpprq Djxv
+Wyqqsr Ekyw
+Xzrrts Flzx
 agaust@agaust:~/Python-Code/Translate$ python un_translate.py left 4 "Uwooqp Ciwu"
 Tvnnpo Bhvt
 Summon Agus
