@@ -40,6 +40,7 @@ def _help():
 """Thanks to: `Iron Fist` for this `shift` function.
 Answered: http://stackoverflow.com/a/34555735/3445802"""
 def shift(s, step, side='right'):
+    step %= len(s) #Will generate correct steps even step > len(s)
     if side == 'right':
         return s[-step:]+s[:-step]
     elif side == 'left':
