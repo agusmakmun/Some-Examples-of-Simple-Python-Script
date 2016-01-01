@@ -37,7 +37,8 @@ def _help():
     print "[?] Untranslate right:   ./un_translate.py right [<number> or -f <for full>] <string_translate> |"
     print "<----------------------------------------------------------------------------------------------->"
 
-"""Thanks to: `Iron Fist` for this `shift` function."""
+"""Thanks to: `Iron Fist` for this `shift` function.
+Answered: http://stackoverflow.com/a/34555735/3445802"""
 def shift(s, step, side='right'):
     if side == 'right':
         return s[-step:]+s[:-step]
