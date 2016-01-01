@@ -3,6 +3,8 @@
 import string, sys
 
 """
+Docs: https://python.web.id/blog/untranslate-tools-for-cryptography/
+
 [1] Stack Problem:
 >>> import string
 >>> make_trans = string.maketrans('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
