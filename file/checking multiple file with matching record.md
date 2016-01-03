@@ -33,16 +33,16 @@ with open('file1') as f:
     l = f.read().splitlines()
 
 for i in l:
-    print(i, d.get(i, '<Not Found>'))
+    print(i, d.get(i, '&lt;Not Found&gt;'))
 </pre>
 
 <b>Demo:</b>
 <pre>
 B21212 The Famous Five
-F12321 <Not Found>
+F12321 &lt;Not Found&gt;
 C12345 Casino Royale
 A09876 Staff Handbook
-Q21212 <Not Found>
+Q21212 &lt;Not Found&gt;
 D23234 Pinky and Perky
 A12345 Noddy in Toy Town
 </pre>
@@ -56,18 +56,18 @@ with open('file2.txt', 'r') as f:
 
         for key in _list:
             if key not in _dict.keys():
-                print key, ' <is not found>'
+                print key, ' &lt;is not found&gt;'
             else:
                 print key, _dict.get(key)
 </pre>
 
 <b>Demo:</b>
 <pre>
-B21212 The Famous Five                                                                                                                                       
-F12321  <is not found>                                                                                                                                       
-C12345 Casino Royale                                                                                                                                         
-A09876 Staff Handbook                                                                                                                                        
-Q21212  <is not found>                                                                                                                                       
-D23234 Pinky and Perky                                                                                                                                       
-A12345 Noddy in Toy Town 
+B21212 The Famous Five     
+F12321  &lt;is not found&gt;      
+C12345 Casino Royale           
+A09876 Staff Handbook                   
+Q21212  &lt;is not found&gt; 
+D23234 Pinky and Perky           
+A12345 Noddy in Toy Town
 </pre>
