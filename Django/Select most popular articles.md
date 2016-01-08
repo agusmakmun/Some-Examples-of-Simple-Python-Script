@@ -86,7 +86,7 @@ class Popular_Videos_Views(generic.ListView):
 </pre>
 
 
-##Update Soved
+##Update Solved
 
 <pre>
 class Popular_Videos_Views(generic.ListView):
