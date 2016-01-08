@@ -1,6 +1,10 @@
 
 ####Thanks so much: http://stackoverflow.com/a/10638642/3445802
 
+solved filtering: 
+- asked: http://stackoverflow.com/questions/4916851/django-get-a-queryset-from-array-of-ids-in-specific-order
+- solved: http://stackoverflow.com/a/33988120/3445802
+
 <pre>
 Article.objects.filter(favorited__in=[...]).annotate(
         vc=models.Count(&#39;vote&#39;)).order_by(&#39;-vc&#39;)
