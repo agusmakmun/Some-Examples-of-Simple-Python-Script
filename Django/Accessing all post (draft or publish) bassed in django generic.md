@@ -1,4 +1,4 @@
-###Accessing all post (draft or publish) bassed in django generic
+###Accessing all post (draft or publish) bassed in django generic with filtering by specific conditions 
 
 Thanks so much: http://stackoverflow.com/a/26752556/3445802
 
