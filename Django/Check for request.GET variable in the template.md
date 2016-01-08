@@ -8,7 +8,7 @@ egg:
 <pre>
 {% block pagination %}
 	{% if user.is_authenticated %}
-		{% if request.GET.filter %}&lt;!-- this like: ?filter=draft --&gt;
+		{% if request.GET.filter == 'draft' %}&lt;!-- this like: ?filter=draft --&gt;
 			&lt;p class=&quot;alert alert-warning&quot;&gt;
 				&lt;span class=&quot;glyphicon glyphicon-info-sign&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Pagination disabled in Draft
 			&lt;/p&gt;
