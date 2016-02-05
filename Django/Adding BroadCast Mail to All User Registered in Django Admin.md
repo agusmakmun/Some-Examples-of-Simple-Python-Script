@@ -65,7 +65,7 @@ class BroadCast_Email_Admin(admin.ModelAdmin):
         list_email_user = [ p.email for p in User.objects.all() ]
         obj_selected = obj[0]
         EmailThread(obj_selected.subject, mark_safe(obj_selected.message), list_email_user).start()
-    submit_email.short_description = &#39;Submit BroadCast&#39;
+    submit_email.short_description = &#39;Submit BroadCast (1 Select Only)&#39;
     submit_email.allow_tags = True
 
     actions = [ &#39;submit_email&#39; ]
