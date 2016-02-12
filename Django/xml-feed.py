@@ -1,4 +1,5 @@
 #DEFAULT SOURCE FROM: https://github.com/pythonanywhere/jab/blob/master/jab/feeds.py
+#RESULTS: http://blog.pythonanywhere.com/feed/
 
 from django.conf import settings
 from django.contrib.syndication.views import Feed
