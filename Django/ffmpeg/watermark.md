@@ -8,7 +8,7 @@ ffmpeg -y -i input.mp4 -i logo.png -filter_complex "overlay=10:10" -codec:a copy
 - `-codec:a copy` -> simply stream copy'ing for audo.
 
 
-This method for `force overwrite`, `benchmark`, `720p` and copy'ing audio codec.
+####This method for `force overwrite`, `benchmark`, `720p` and copy'ing audio codec:
 ```
 ffmpeg -y -i input.mp4 -i logo.png -s 720x406 -filter_complex "overlay=10:10" -codec:a copy output.mp4
 ```
