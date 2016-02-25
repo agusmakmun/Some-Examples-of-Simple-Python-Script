@@ -1,4 +1,6 @@
-Refference: http://stackoverflow.com/a/10920872/3445802
+Refference: 
+- http://stackoverflow.com/a/10920872/3445802
+- http://stackoverflow.com/a/4491369/3445802
 
 ```
 ffmpeg -y -i input.mp4 -i logo.png -filter_complex "overlay=10:10" -codec:a copy output.mp4
