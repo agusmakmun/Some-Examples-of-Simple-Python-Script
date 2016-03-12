@@ -40,6 +40,8 @@ $ screen irssi
 ```
 /script load nicklist.pl
 /reload
+/nicklist fifo #for_first_config
+/set nicklist_automode SCREEN
 ```
 
 ###ENABLE NICKLIST
