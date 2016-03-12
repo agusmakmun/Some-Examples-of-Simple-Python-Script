@@ -20,7 +20,7 @@ sudo apt-get install irssi
 /leave
 
 ### THEME
-1. Download tema: https://irssi-import.github.io/themes/
+1. Download heme: https://irssi-import.github.io/themes/ or https://github.com/ronilaukkarinen/weed
 2. Copy ex: murf.theme ke: ~/.irssi/murf.theme
 ```
 /set theme murf.theme
