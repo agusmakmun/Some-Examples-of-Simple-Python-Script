@@ -12,12 +12,10 @@ sudo apt-get install irssi
 * http://www.ircbeginner.com/ircinfo/ircc-commands.html
 * https://pthree.org/2010/02/02/irssis-channel-network-server-and-connect-what-it-means/
 
-### CONNECT
-/connect irc.freenode.net
-/nick summonagus
-/join #ubuntu-indonesia
-/window 2
-/leave
+### OPEN IRSSI
+```
+$ screen irssi
+```
 
 ### THEME
 1. Download heme: https://irssi-import.github.io/themes/ or https://github.com/ronilaukkarinen/weed
@@ -25,6 +23,15 @@ sudo apt-get install irssi
 ```
 /set theme murf.theme
 /set theme themes/dot.theme
+```
+
+### CONNECT
+```
+/connect irc.freenode.net
+/nick summonagus
+/join #ubuntu-indonesia
+/window 2
+/leave
 ```
 
 ###LOAD SCRIPT
