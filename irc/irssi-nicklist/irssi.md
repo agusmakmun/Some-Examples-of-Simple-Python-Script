@@ -17,6 +17,22 @@ sudo apt-get install irssi
 $ screen irssi
 ```
 
+### EXAMPLE CONFIG (~/.irssi/config)
+Change `real_name`, `user_name` and `nick`.
+* http://pastebin.com/Uu08UHF0
+
+```bash
+settings = {
+  core = {
+    real_name = "agaust";
+    user_name = "agaust";
+    nick = "summonagus";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "themes/dot.theme"; };
+};
+```
+
 ### THEME
 1. Download heme: https://irssi-import.github.io/themes/ or https://github.com/ronilaukkarinen/weed
 2. Copy ex: murf.theme ke: ~/.irssi/murf.theme
