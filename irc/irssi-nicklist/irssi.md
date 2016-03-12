@@ -1,3 +1,6 @@
+<img src="https://raw.githubusercontent.com/agusmakmun/Some-Examples-of-Simple-Python-Script/master/irc/irssi-nicklist/irssi-with-nicklist-right-side.png">
+
+###Instalations
 ```
 sudo apt-get install screen
 sudo apt-get install irssi
