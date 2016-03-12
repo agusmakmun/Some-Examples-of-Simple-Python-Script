@@ -19,7 +19,7 @@ sudo apt-get install irssi
 /window 2
 /leave
 
-### TEMA
+### THEME
 1. Download tema: https://irssi-import.github.io/themes/
 2. Copy ex: murf.theme ke: ~/.irssi/murf.theme
 ```
@@ -35,7 +35,10 @@ sudo apt-get install irssi
 /reload
 ```
 
-/nicklist [-bN|-dflor] [#channel]
+###ENABLE NICKLIST
+* https://dev.adiirc.com/projects/adiirc/wiki/Nicklist
+
+`/nicklist [-bN|-dflor] [#channel]`
 
 Enables/disables Nicklist.
 
