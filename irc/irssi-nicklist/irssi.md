@@ -25,7 +25,7 @@ $ screen irssi
 /set theme themes/dot.theme
 ```
 
-### CONNECT
+### CONNECT, SET_NICKNAME, JOIN AND LEAVE
 ```
 /connect irc.freenode.net
 /nick summonagus
