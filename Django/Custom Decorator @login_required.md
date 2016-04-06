@@ -1,7 +1,7 @@
 * https://docs.djangoproject.com/en/1.9/_modules/django/contrib/auth/decorators/#login_required
 * http://stackoverflow.com/a/32331657/3445802
 
-```
+```python
 from functools import wraps
 
 def profile_required(view_func):
