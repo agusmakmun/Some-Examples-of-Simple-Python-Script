@@ -1,5 +1,12 @@
-* Refference: http://stackoverflow.com/a/21223908/3445802
+#### Refference:
+* http://stackoverflow.com/a/21223908/3445802
+* http://stackoverflow.com/a/21206760/3445802
 
+```python
+is_staff = models.BooleanField(verbose_name="My Best Staff's", default=False)
+```
+
+#### Others:
 
 ```python
 from django.contrib import admin
