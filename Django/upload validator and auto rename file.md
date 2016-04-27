@@ -73,9 +73,6 @@ class Upload_Pdf(models.Model):
             rand_strings = ''.join( random.choice(string.lowercase+string.digits) for i in range(7) )
             filename = '{}_{}{}.{}'.format(f_name, rand_strings, uuid4().hex, ext)
             
-            print f_name
-            print rand_strings
-
             return os.path.join(self.path, filename)
 
     # Please comment `validators=[upload_pdf_validator]` and `upload_to=` before migrate/makemigrations your database.
