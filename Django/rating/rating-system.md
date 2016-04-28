@@ -105,7 +105,7 @@ urlpatterns = [
           $('#myModal').show();
           $("#result").html(error.responseText);
           setTimeout(function(){
-              $("#myModal").hide();
+              $("#myModal").hide(10);
           }, 1000);
       }
 
