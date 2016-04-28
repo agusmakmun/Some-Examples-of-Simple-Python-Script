@@ -85,7 +85,7 @@ urlpatterns = [
     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
   </button>
 
-  <button class="btn btn-lg btn-danger" type="submit" id="submit-vote-down">
+  <button class="btn btn-lg btn-danger" id="submit-vote-down">
     <i class="fa fa-thumbs-down" aria-hidden="true"></i>
   </button>
 
