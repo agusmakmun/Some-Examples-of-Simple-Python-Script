@@ -1,4 +1,4 @@
-> This is sample rating system used module from `django-updown` (https://github.com/weluse/django-updown/), and with ajax method.
+> This is sample rating system use module from `django-updown` (https://github.com/weluse/django-updown/), and with ajax method.
 
 ##### 1. Install the module
 
