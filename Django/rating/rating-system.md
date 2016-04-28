@@ -1,12 +1,12 @@
 > This is sample rating system used module from `django-updown` (https://github.com/weluse/django-updown/), and with ajax method.
 
-#### 1. Install the module
+##### 1. Install the module
 
 ```shell
 $ pip install django-updown
 ```
 
-#### 2. Cofiguration in `settings.py`
+##### 2. Cofiguration in `settings.py`
 
 ```python
 INSTALLED_APPS = [
@@ -21,7 +21,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### 3. Register to `your_app/models.py`
+##### 3. Register to `your_app/models.py`
 
 ```python
 from __future__ import unicode_literals
@@ -36,7 +36,7 @@ class Tutorial(models.Model):
 
 ```
 
-#### 4. If you need showing the ratings inside your admin. in your `your_app/admin.py`
+##### 4. If you need showing the ratings inside your admin. in your `your_app/admin.py`
 
 ```python
 from your_app.models import Tutorial
@@ -46,7 +46,7 @@ admin.site.register(Tutorial)
 admin.site.register(Vote)
 ```
 
-#### 5. Add the url in `your_app/urls.py`
+##### 5. Add the url in `your_app/urls.py`
 
 ```python
 from django.conf.urls import include, url
@@ -61,7 +61,7 @@ urlpatterns = [
 ]
 ```
 
-#### 6. In your templates single page for tutorial, ex: `your_app/templates/single.html`
+##### 6. In your templates single page for tutorial, ex: `your_app/templates/single.html`
 
 ```html
 {% include "base.html" %}
