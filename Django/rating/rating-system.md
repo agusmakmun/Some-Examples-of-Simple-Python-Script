@@ -1,4 +1,6 @@
-#### 1. Install the module (https://github.com/weluse/django-updown/)
+> This is sample rating system used module from `django-updown` (https://github.com/weluse/django-updown/), and with ajax method.
+
+#### 1. Install the module
 
 ```shell
 $ pip install django-updown
