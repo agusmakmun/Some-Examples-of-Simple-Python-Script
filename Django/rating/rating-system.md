@@ -34,7 +34,17 @@ class Tutorial(models.Model):
 
 ```
 
-#### 4. Add the url in `your_app/urls.py`
+#### 4. If you need showing the ratings inside your admin. in your `your_app/admin.py`
+
+```python
+from your_app.models import Tutorial
+from updown.models import Vote
+
+admin.site.register(Tutorial)
+admin.site.register(Vote)
+```
+
+#### 5. Add the url in `your_app/urls.py`
 
 ```python
 from django.conf.urls import include, url
@@ -49,7 +59,7 @@ urlpatterns = [
 ]
 ```
 
-#### 5. In your templates single page for tutorial, ex: `your_app/templates/single.html`
+#### 6. In your templates single page for tutorial, ex: `your_app/templates/single.html`
 
 ```html
 {% include "base.html" %}
