@@ -28,7 +28,7 @@ data_transaksi = [
     ('10', '130', 'kontan', tanggal, '90300')
 ]
 
-for data range(data_transaksi):
+for data in data_transaksi:
     cursor.execute(sql, data)
     cnx.commit()
 
