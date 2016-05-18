@@ -1,4 +1,5 @@
 # INSTALL THE MODULE: https://dev.mysql.com/downloads/connector/python/
+# DOCS: https://dev.mysql.com/doc/connector-python/en/connector-python-example-cursor-transaction.html
 
 import sys, datetime
 import mysql.connector
