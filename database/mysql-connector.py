@@ -19,7 +19,7 @@ except:
 tanggal = datetime.datetime.now().date()
 
 sql = ("""\
-        INSERT INTO transaksi values \
+        INSERT INTO transaksi \
         ('id_nasabahFK', 'no_rekeningFK', 'jenis_transaksi', 'tanggal', 'jumlah') \
         VALUES (%s, %s, %s, %s, %s)\
       """)
