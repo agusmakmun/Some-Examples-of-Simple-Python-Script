@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+# ============================================
+# Name        : ForceKillTool
+# Description : Simple tool to Force kill the process from another tools on LINUX.
+# Author      : <Summon Agus> ~ agus@python.web.id
+# Version     : 0.0.1
+# ============================================
+
+import sys, os, subprocess
+
+if os.getuid() != 0:
+    print "\n[-] Please Access as root..!\n"
+    sys.exit()
+else: pass
+
+def forceKill(input_tool):
+    try:
+        subprocess.check_output("kill $(ps ax | grep %s | grep -v grep | awk \'{print $1}\')" % input_tool, shell=True)
+    except subprocess.CalledProcessError as e:
+        print e.output
+
+def print_help():
+    print '\n' + __file__ + ' [tool]\n'
+
+if __name__ == '__main__':
+    if len(sys.argv) == 1 or len(sys.argv) > 2: print_help()
+    else: forceKill(sys.argv[1])
