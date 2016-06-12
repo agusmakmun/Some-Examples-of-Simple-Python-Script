@@ -1,0 +1,8 @@
+# takeScreenshot
+import os
+os.system("import -window root temp.png")
+
+# Importing to docx file
+* pip install python-docx
+* http://python-docx.readthedocs.io/en/latest/user/quickstart.html
+* http://stackoverflow.com/a/32932578/6396981
