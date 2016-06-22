@@ -18,9 +18,13 @@ def downloadImages(url):
     print '[i] Downloading {} images...'.format(len(images))
     count = 0
     for image in images:
-        count += 1
         name = image.split('/')[-1].replace('%20', ' ')
-        urllib.urlretrieve(image, path_download_images + name)
+        try:
+            count += 1
+            urllib.urlretrieve(image, path_download_images + name)
+        except:
+            count -= 1
+            continue
         print ' {}. Downloaded `{}`'.format(count, name)
 
     print '[i] Success downloaded {} images to path `{}`'.format(count, path_download_images)
