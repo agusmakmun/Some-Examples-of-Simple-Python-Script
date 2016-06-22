@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-''' Created by: Summon Agus (agus@python.web.id)
+''' Created by: Summon Agus (agus@python.web.id) at Wed, 22 Jun 2016 : 20:50
     Licensed  : MIT '''
 
 import os, sys, urllib, urllib2
