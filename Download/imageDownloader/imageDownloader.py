@@ -13,7 +13,7 @@ if os.path.isdir(path_download_images) == False:
 
 def downloadImages(url):
     page   = BeautifulSoup(urllib2.urlopen(url))
-    images = [ img['src'] for img in page.findAll('img') ]
+    images = set([ img['src'] for img in page.findAll('img') ])
     
     print '[i] Downloading {} images...'.format(len(images))
     count = 0
