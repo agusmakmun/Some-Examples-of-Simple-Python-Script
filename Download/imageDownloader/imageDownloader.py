@@ -19,7 +19,7 @@ def downloadImages(url):
     count = 0
     for image in images:
         count += 1
-        name = image.split('/')[-1]
+        name = image.split('/')[-1].replace('%20', ' ')
         urllib.urlretrieve(image, path_download_images + name)
         print ' {}. Downloaded `{}`'.format(count, name)
 
