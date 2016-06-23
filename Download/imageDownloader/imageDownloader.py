@@ -1,36 +1,68 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-''' Created by: Summon Agus (agus@python.web.id) at Wed, 22 Jun 2016 : 20:50
-    Licensed  : MIT '''
-
-import os, sys, urllib, urllib2
-from bs4 import BeautifulSoup
-
-path_download_images = 'images/'
-
-if os.path.isdir(path_download_images) == False:
-    os.makedirs(path_download_images)
-
-def downloadImages(url):
-    page   = BeautifulSoup(urllib2.urlopen(url))
-    images = set([ img['src'] for img in page.findAll('img') ])
+''' LogInstaller for Linux bassed on debian (all deb).
+    Created by: Summon Agus (agus@python.web.id) at Thu, 23 Jun 2016 : 22:51
+    Licensed  : MIT
     
-    print '[i] Downloading {} images...'.format(len(images))
-    count = 0
-    for image in images:
-        name = image.split('/')[-1].replace('%20', ' ')
-        try:
-            count += 1
-            urllib.urlretrieve(image, path_download_images + name)
-        except:
-            count -= 1
-            continue
-        print ' {}. Downloaded `{}`'.format(count, name)
+    Config:
+      You also can setup this file using crontab, ex:
+        $ sudo crontab -e
+      
+      Setup to daily method ([minute] [hour] [date] [month] [year])
+        59 23 * * * ~/path/to/logInstaller.py
+'''
 
-    print '[i] Success downloaded {} images to path `{}`'.format(count, path_download_images)
+import os
 
-if __name__ == '__main__':
-    if len(sys.argv) <= 1:
-        print './{} [url]'.format(__file__)
-    else:
-        downloadImages(sys.argv[1])
+homedir      = os.path.expanduser('~')
+bash_history = open(homedir+"/.bash_history", 'r')
+logFile      = 'logs/logInstaller.txt'
+
+outList = []
+with bash_history as f:
+    for log in f.readlines():
+        log       = log.replace('\n', '')
+        log_split = log.split()
+        
+        if len(log_split) > 1:
+            permission = 'user'
+            if log_split[0] == 'sudo':
+                permission = 'root'
+
+            prefix = all([
+                '-r' not in log_split and \
+                '--update' not in log_split and \
+                '--upgrade' not in log_split
+            ])
+            if permission == 'root':
+                if prefix and \
+                   log_split[1] == 'pip' and log_split[2] == 'install' or \
+                   log_split[1] == 'apt-get' and log_split[2] == 'install':
+                    outList.append('{} : {}\n'.format(permission, log))
+            elif permission == 'user':
+                if prefix and \
+                   log_split[0] == 'pip' and log_split[1] == 'install' or \
+                   log_split[0] == 'apt-get' and log_split[1] == 'install':
+                    outList.append('{} : {}\n'.format(permission, log))
+
+setNewLog = set(outList)
+mode      = 'w'
+if os.path.exists(logFile):
+    mode = 'rb+'
+
+with open(logFile, mode) as writeLog:
+    rep_log   = lambda l: l.replace('\n', '')
+    
+    if mode == 'rb+':        
+        setOldLog = set([ rep_log(log) for log in writeLog.readlines() ])
+        for log in setNewLog:
+            if rep_log(log) not in setOldLog:
+                print "[i] New tool --> {}".format(rep_log(log))
+                writeLog.write(log)
+            else: pass
+
+    elif mode == 'w':
+        for log in setNewLog:
+            print "[i] New tool --> {}".format(rep_log(log))
+            writeLog.write(log)
