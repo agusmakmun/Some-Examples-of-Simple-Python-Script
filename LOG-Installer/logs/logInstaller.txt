@@ -3,11 +3,8 @@ root : sudo apt-get install simplescreenrecorder
 root : sudo apt-get install wine
 root : sudo pip install requesocks
 root : sudo pip install autopep8
-root : sudo pip install autopep8 --upgrade
 root : sudo pip install MySQL-python
-root : sudo pip install --upgrade autopep8
 root : sudo pip install matplotlib
 root : sudo pip install psutil thefuck
 root : sudo apt-get install deb.torproject.org-keyring
-root : sudo pip install psutil thefuck --upgrade
 root : sudo pip install pyplot
