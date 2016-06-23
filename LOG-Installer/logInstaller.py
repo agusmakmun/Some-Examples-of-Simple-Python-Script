@@ -29,8 +29,9 @@ with bash_history as f:
             permission = 'user'
             if log_split[0] == 'sudo':
                 permission = 'root'
-
-            if log_split[1] == 'pip' and log_split[2] == 'install' or \
+            
+            if '--upgrade' not in log_split and \
+               log_split[1] == 'pip' and log_split[2] == 'install' or \
                log_split[1] == 'apt-get' and log_split[2] == 'install':
                 outList.append('{} : {}\n'.format(permission, log))
 
