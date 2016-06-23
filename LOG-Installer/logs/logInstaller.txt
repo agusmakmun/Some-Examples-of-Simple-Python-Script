@@ -1,10 +1,26 @@
 root : sudo pip install Twisted
+user : pip install MySQLdb
+user : pip install py2exe
+user : pip install matplotlib
+user : pip install pyinstaller
+user : pip install Twisted
+user : pip install jsonpickle
+user : pip install scipy
+user : pip install wine
+root : sudo pip install autopep8
+root : sudo pip install matplotlib
+user : pip install autopep8
+root : sudo pip install pyplot
+user : pip install MySQL-python
+user : pip install python-twitter
+user : pip install numpy
+user : pip install tweepy
+root : sudo pip install MySQL-python
+root : sudo pip install psutil thefuck
+root : sudo apt-get install deb.torproject.org-keyring
 root : sudo apt-get install simplescreenrecorder 
 root : sudo apt-get install wine
 root : sudo pip install requesocks
-root : sudo pip install autopep8
-root : sudo pip install MySQL-python
-root : sudo pip install matplotlib
-root : sudo pip install psutil thefuck
-root : sudo apt-get install deb.torproject.org-keyring
-root : sudo pip install pyplot
+user : pip install nltk
+user : pip install python-docx
+user : pip install Django
