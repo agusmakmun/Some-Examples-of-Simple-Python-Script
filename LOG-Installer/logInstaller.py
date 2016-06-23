@@ -29,12 +29,22 @@ with bash_history as f:
             permission = 'user'
             if log_split[0] == 'sudo':
                 permission = 'root'
-            
-            if '--update' not in log_split and \
-               '--upgrade' not in log_split and \
-               log_split[1] == 'pip' and log_split[2] == 'install' or \
-               log_split[1] == 'apt-get' and log_split[2] == 'install':
-                outList.append('{} : {}\n'.format(permission, log))
+
+            prefix = all([
+                '-r' not in log_split and \
+                '--update' not in log_split and \
+                '--upgrade' not in log_split
+            ])
+            if permission == 'root':
+                if prefix and \
+                   log_split[1] == 'pip' and log_split[2] == 'install' or \
+                   log_split[1] == 'apt-get' and log_split[2] == 'install':
+                    outList.append('{} : {}\n'.format(permission, log))
+            elif permission == 'user':
+                if prefix and \
+                   log_split[0] == 'pip' and log_split[1] == 'install' or \
+                   log_split[0] == 'apt-get' and log_split[1] == 'install':
+                    outList.append('{} : {}\n'.format(permission, log))
 
 setNewLog = set(outList)
 mode      = 'w'
