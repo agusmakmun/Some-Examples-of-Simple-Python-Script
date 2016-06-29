@@ -2,7 +2,7 @@ import sys
 import json
 import requests
 
-URL_API      = 'http://smsmasking.ca/api.html'
+URL_API = 'http://smsmasking.ca/api.html'
 
 def sendSMS(sender, number, message):
     message_data = {
