@@ -29,7 +29,7 @@ if __name__ == '__main__':
         print "\nUsage:"
         print "  python", __file__, "[sender] [number] [message]"
         print "Example:"
-        print "  python sms_masking.py 'yourname' +62857xxxxxxxx 'Sample Message'\n"
+        print "  python", __file__, "'yourname' +62857xxxxxxxx 'Sample Message'\n"
         sys.exit()
     
     sendSMS(sys.argv[1], sys.argv[2], sys.argv[3])
