@@ -1,0 +1,6 @@
+[ for remove tag origin ] git push --delete origin v1.0
+[ for remove tag local  ] git tag --delete v1.0
+
+[ for check all tag  ] git tag
+[ for adding new tag ] git tag -a v1.0 -m 'Initial launch v1.0'
+[ for push to origin ] git push origin v1.0
