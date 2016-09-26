@@ -4,3 +4,11 @@
 [ for check all tag  ] git tag
 [ for adding new tag ] git tag -a v1.0 -m 'Initial launch v1.0'
 [ for push to origin ] git push origin v1.0
+
+
+1. Create your project_dir
+2. $ git init
+3. $ git remote add origin git@bitbucket.org:summonagus/grabberproject.git
+4. $ git add .
+5. $ git commit -m 'Your Comment commit'
+6. $ git push -u origin master
