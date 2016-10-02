@@ -1,3 +1,5 @@
+This config made for https://python.web.id - https://github.com/agusmakmun/Django-Blog-Python-Learning
+
 Inside file of `/yourproject/yourapp/management/commands/autobackup.py`
 
 ```python
