@@ -16,7 +16,7 @@
 > Don't forget to add `docs/` into your `.gitignore` _(master)_. 
 > This to makesure the folder of `/docs/` isn't included whenever you push at master branch.
 
-```
+```bash
 (master)   $ mkdir docs/                              # example sub folder
 (master)   $ cp -R .git/ docs/                        # to copying default `.git` config from master.
 (gh-pages) $ cd docs/                                 # to go to `/csf-blocker/docs/`
@@ -45,3 +45,11 @@ To switch as `master` branch again, you should do this:
 ```
 
 > If your `gh-pages` is as github pages, the domain name is `agusmakmun.github.io/csf-blocker`
+
+To delete the branch, you can do with this:
+
+```bash
+$ git branch -d {branch_name}
+$ # example
+$ git branch -d gh-pages
+```
