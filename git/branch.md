@@ -5,9 +5,11 @@
 
 ```bash
 (master) $ git clone https://github.com/agusmakmun/csf-blocker.git
-(master) $ nano .gitignore # add `docs/` inside it.
+(master) $ cd csf-blocker/
+(master) $ git branch                               # to check the exited branch, default is: `master`
+(master) $ nano .gitignore                          # add `docs/` inside it.
 (master) $ git add .
-(master) $ git commit -m "exluded the docs from master branch"
+(master) $ git commit -m "exluded the folder of docs/ from master branch"
 (master) $ git push origin master
 ```
 
@@ -15,8 +17,6 @@
 > This to makesure the folder of `/docs/` isn't included whenever you push at master branch.
 
 ```
-(master) $ cd csf-blocker/
-(master) $ git branch                               # to check the exited branch `default: master`
 (master) $ mkdir docs/                              # example sub folder
 (master) $ cp -R .git/ docs/                        # to copying default `.git` config from master.
 (child)  $ cd docs/                                 # to go to `/csf-blocker/docs/`
