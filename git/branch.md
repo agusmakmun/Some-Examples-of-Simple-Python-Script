@@ -36,12 +36,12 @@ And then, checkout at your branch, example:
 To switch as `master` branch again, you should do this:
 
 ```bash
-(gh-pages) $ cd ..                                                    # to back to your master project
-(master)   $ git checkout master                                      # to switch as master branch
-                                                                      # and then, change your master project.
-(master)   $ git add .                                                # to add your changed files.
-(master)   $ git commit -m "I'm come back in master"                  # commit name
-(master)   $ git push origin master                                   # to push to your master branch
+(gh-pages) $ cd ..                                     # to back to your master project
+(master)   $ git checkout master                       # to switch as master branch
+                                                       # and then, change your master project.
+(master)   $ git add .                                 # to add your changed files.
+(master)   $ git commit -m "I'm come back in master"   # commit name
+(master)   $ git push origin master                    # to push to your master branch
 ```
 
 > If your `gh-pages` is as github pages, the domain name is `agusmakmun.github.io/csf-blocker`
