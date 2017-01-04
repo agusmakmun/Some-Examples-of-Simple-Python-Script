@@ -10,10 +10,10 @@
 (master) $ mkdir docs/                              # example sub folder
 (master) $ cp -R .git/ docs/                        # to copying default `.git` config from master.
 (child)  $ cd docs/                                 # to go to `/csf-blocker/docs/`
-(child)  $ touch .gitignore                         # initial .gitignore for `gh-pages`
-                                                    # and then, create your project.
 (child)  $ git branch gh-pages                      # to create new branch
 (child)  $ git checkout gh-pages                    # to switch as `gh-pages`
+(child)  $ touch .gitignore                         # initial .gitignore for `gh-pages`
+                                                    # and then, create your project.
 (child)  $ git add .                                # add your `.gitignore` and others.
 (child)  $ git commit -m 'Initial launch for docs'  # commit name
 (child)  $ git push origin gh-pages                 # to push to your gh-pages branch
