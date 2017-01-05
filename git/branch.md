@@ -6,7 +6,7 @@
 ```bash
 (master) $ git clone https://github.com/agusmakmun/csf-blocker.git
 (master) $ cd csf-blocker/
-(master) $ git branch                               # to check the exited branch, default is: `master`
+(master) $ git branch                               # to check the all branch, default is: `master`
 (master) $ nano .gitignore                          # add `docs/` inside it.
 (master) $ git add .
 (master) $ git commit -m "exluded the folder of docs/ from master branch"
