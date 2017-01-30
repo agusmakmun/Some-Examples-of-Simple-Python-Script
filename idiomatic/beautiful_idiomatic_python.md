@@ -2,13 +2,14 @@
 > The code examples and direct quotes are all from Raymond's talk. 
 > I've reproduced them here for my own edification and the hopes that others will find them as handy as I have!
 
-#### Original Source: https://gist.github.com/JeffPaine/6213790
+* Original Source: https://gist.github.com/JeffPaine/6213790
+* Modified Source: https://gist.github.com/lucasnad27/e93b8f316259be3299e5
 
 -------------------------------
 
 # Transforming Code into Beautiful, Idiomatic Python
 
-Notes from Raymond Hettinger's talk at pycon US 2013 [video](http://www.youtube.com/watch?feature=player_embedded&v=OSGv2VnC0go), [slides](https://speakerdeck.com/pyconslides/transforming-code-into-beautiful-idiomatic-python-by-raymond-hettinger-1).
+Notes from Raymond Hettinger's talk at pycon US 2013 [video](http://www.youtube.com/watch?feature=player_embedded&v=OSGv2VnC0go), [slides](https://speakerdeck.com/pyconslides/transforming-code-into-beautiful-idiomatic-python-by-raymond-hettinger-1) and pycon US 2015 [video](https://www.youtube.com/watch?v=wf-BqAjZb8M)
 
 The code examples and direct quotes are all from Raymond's talk. I've reproduced them here for my own edification and the hopes that others will find them as handy as I have!
 
@@ -28,7 +29,7 @@ for i in range(6):
 for i in xrange(6):
     print i**2
 ```
-`xrange` creates an iterator over the range producing the values one at a time. This approach is much more memory efficient than `range`. `xrange` was renamed to `range` in python 3.
+`xrange` creates an iterator over the range producing the values one at a time. This approach is much more memory efficient than `range`. `xrange` was renamed `range` in python 3.
 
 ## Looping over a collection
 
@@ -103,7 +104,6 @@ for name, color in izip(names, colors):
 ```
 
 `zip` creates a new list in memory and takes more memory. `izip` is more efficient than `zip`.
-Note: in python 3 `izip` was renamed to `zip` and promoted to a builtin replacing the old `zip`.
 
 ## Looping in sorted order
 
@@ -189,7 +189,7 @@ def find(seq, target):
 
 Inside of every `for` loop is an `else`.
 
-## Looping over dictionary keys
+## Looping over dicitonary keys
 
 ```python
 d = {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
@@ -207,9 +207,8 @@ When should you use the second and not the first? When you're mutating the dicti
 > If you mutate something while you're iterating over it, you're living in a state of sin and deserve what ever happens to you.
 
 `d.keys()` makes a copy of all the keys and stores them in a list. Then you can modify the dictionary.
-Note: in python 3 to iterate through a dictionary you have to explicidly write: `list(d.keys())` because `d.keys()` returns a "dictionary view" (an iterable that provide a dynamic view on the dictionary’s keys). See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
 
-## Looping over dictionary keys and values
+## Looping over dicitonary keys and values
 
 ```python
 # Not very fast, has to re-hash every key and do a lookup
@@ -229,8 +228,7 @@ for k, v in d.iteritems():
 ```
 
 `iteritems()` is better as it returns an iterator.
-Note: in python 3 there is no `iteritems()` and `items()` behaviour is close to what `iteritems()` had. See [documentation](https://docs.python.org/3/library/stdtypes.html#dict-views).
- 
+
 ## Construct a dictionary from pairs
 
 ```python
@@ -240,7 +238,6 @@ colors = ['red', 'green', 'blue']
 d = dict(izip(names, colors))
 # {'matthew': 'blue', 'rachel': 'green', 'raymond': 'red'}
 ```
-For python 3: `d = dict(zip(names, colors))`
 
 ## Counting with dictionaries
 
@@ -517,8 +514,7 @@ names.appendleft('mark')
 
 ```python
 # Mixes business / administrative logic and is not reusable
-def web_lookup(url, saved={}):
-    if url in saved:
+def web_lookup(url, saved={}): if url in saved:
         return saved[url]
     page = urllib.urlopen(url).read()
     saved[url] = page
@@ -532,8 +528,6 @@ def web_lookup(url, saved={}):
 def web_lookup(url):
     return urllib.urlopen(url).read()
 ```
-
-Note: since python 3.2 there is a decorator for this in the standard library: `functools.lru_cache`.
 
 ## Factor-out temporary contexts
 
@@ -610,7 +604,6 @@ with ignored(OSError):
 ```
 
 `ignored` is is new in python 3.4, [documentation](http://docs.python.org/dev/library/contextlib.html#contextlib.ignored).
-Note: `ignored` is actually called `suppress` in the standard library.
 
 To make your own `ignored` context manager in the meantime:
 
@@ -688,3 +681,90 @@ print sum(i**2 for i in xrange(10))
 ```
 
 First way tells you what to do, second way tells you what you want.
+
+## Adapter Classes
+
+Learn to recognize non-pythonic APIs and to recognize good code. Here are a few pointers to help you identify opportunities to utilze an adapter class
+
+* Avoid unnecessary packaging in favor of simpler imports
+* Create custom exceptions
+* Use properties instead of getter methods
+* Create a context manager for recurring set-up and teardown logic
+* Use magic methods:
+  * \__len__ instead of getSize()
+  * \__getitem__ instead of getRouteByIndex()
+  * make the table iterable
+  * Add good \__repr__ for better debuggability
+
+```python
+import jnettool.tools.elements.NetworkElement
+import jnettool.tools.Routing
+
+class NetworkElementError(Exception):
+    pass
+
+class NetworkElement(object):
+    
+    def __init__(self, ipaddr):
+        self.ipaddr = ipaddr
+        self.oldne = jnettool.tools.elements.NetworkElement(ipaddr)
+
+    @property
+    def routing_table(self):
+        try:
+            return RoutingTable(self.oldne.getRoutingTable())
+        except jnettool.tools.elements.MissingVar:
+            raise NetworkElementError('No routing table found')
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exctype, excinst, exctb):
+        if exctype == NetworkElementError:
+            logging.exception('No routing table found')
+            self.oldne.cleanup('rollback')
+        else:
+            self.oldne.cleanup('commit')
+        self.oldne.disconnect()
+
+    def __repr__(self):
+        return '%s(%r)' % (self.__class__.__name__, self.ipaddr)
+
+
+class RoutingTable(object):
+    
+    def __init__(self, oldrt):
+        self.oldrt = oldrt
+    
+    def __len__(self):
+        return self.oldrt.getSize()
+    
+    def __getitem__(self, index):
+        if index >= len(self):
+            raise IndexError
+        return Route(self.oldrt.getRouteByIndex(index))
+
+
+class Route(object):
+    
+    def __init__(self, old_route):
+        self.old_route = old_route
+    
+    @property
+    def name(self):
+        return self.old_route.getName()
+    
+    @property
+    def ipaddr(self):
+        return self.old_route.getIPAddr()
+```
+
+Here is a sample of using the above class
+
+```python
+from nettools import NetworkElement
+
+with NetworkElement('127.0.0.1') as ne:
+    for route in ne.routing_table:
+       print '{} --> {}'.format(route.name, route.ipaddress)
+```
